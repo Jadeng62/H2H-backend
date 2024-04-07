@@ -2,12 +2,21 @@
 const cors = require("cors");
 const express = require("express");
 
+const authController = require("./controllers/authController");
+
 // CONFIGURATION
 const app = express();
 
 // MIDDLEWARE
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    // origin: "https://main--jwt-auth-10-3.netlify.app/",
+  })
+);
 app.use(express.json());
+
+app.use("/api/auth", authController);
 
 // ROUTES
 app.get("/", (req, res) => {

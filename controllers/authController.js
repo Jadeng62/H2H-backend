@@ -19,7 +19,6 @@ auth.get("/user/:uid", authMiddleware, async (req, res) => {
   const user = await findUserByID(uid);
 
   if (user) {
-    console.log("user", user);
     res.status(200).json(user);
   } else {
     res.status(500).json({ error: "Error fetching user" });

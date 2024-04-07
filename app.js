@@ -19,12 +19,12 @@ app.use(express.json());
 app.use("/api/auth", authController);
 
 // ROUTES
-app.get("/", (req, res) => {
-  res.send("Welcome to Basic Express Server");
+app.get("/", (_req, res) => {
+  res.send("Welcome to Firebase Backend Server");
 });
 
 // 404 PAGE
-app.get("*", (req, res) => {
+app.get("*", (_req, res) => {
   res.status(404).send("Page not found");
 });
 

@@ -1,5 +1,5 @@
 -- db/schema.sql
-DROP DATABASE IF EXISTS firebase_full  ;
+DROP DATABASE IF EXISTS firebase_full;
 CREATE DATABASE firebase_full;
 
 \c firebase_full;

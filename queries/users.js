@@ -19,7 +19,8 @@ const findUserByID = async (uid) => {
   try {
     const query = 'SELECT * FROM users WHERE uid = $1'
 
-    const user = await db.oneOrNone(query, uid)('find', user)
+    const user = await db.oneOrNone(query, uid)
+
     return user
   } catch (error) {
     console.error('Error finding user by username:', error)

@@ -4,7 +4,6 @@ const authMiddleware = require('../middlewares/authMiddleware')
 const { createNewUser, findUserByID } = require('../queries/users.js')
 
 auth.post('/register', async (req, res) => {
-  // console.log('register', req.body)
   const newUser = await createNewUser(req.body)
 
   if (newUser) {
@@ -16,7 +15,7 @@ auth.post('/register', async (req, res) => {
 
 auth.get('/user/:uid', authMiddleware, async (req, res) => {
   const { uid } = req.params
-  console.log('getUser', uid)
+
   const user = await findUserByID(uid)
 
   if (user) {

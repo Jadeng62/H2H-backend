@@ -14,14 +14,7 @@ app.use((req, _res, next) => {
   console.log('Origin Requested:', req.headers.origin)
   next()
 })
-// app.use(
-//   cors({
-//     origin: [
-//       'http://localhost:3000',
-//       'https://firebase-auth-portfilio-client.netlify.app',
-//     ],
-//   })
-// )
+
 app.use(express.json())
 
 app.use('/api/auth', authController)

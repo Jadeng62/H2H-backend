@@ -15,7 +15,7 @@ const createNewUser = async (user) => {
   }
 }
 
-const findUserByID = async (uid) => {
+const findUserByUID = async (uid) => {
   try {
     const query = 'SELECT * FROM users WHERE uid = $1'
 
@@ -29,5 +29,5 @@ const findUserByID = async (uid) => {
 }
 module.exports = {
   createNewUser,
-  findUserByID,
+  findUserByUID,
 }

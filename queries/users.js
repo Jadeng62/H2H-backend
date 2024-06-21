@@ -23,7 +23,7 @@ const findUserByID = async (uid) => {
 
     return user
   } catch (error) {
-    console.error('Error finding User By ID:', error)
+    console.error('Error finding User By UID:', error)
     throw error
   }
 }

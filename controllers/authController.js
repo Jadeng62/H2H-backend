@@ -15,9 +15,7 @@ auth.post('/register', async (req, res) => {
 
 auth.get('/user/:uid', authMiddleware, async (req, res) => {
   const { uid } = req.params
-
   const user = await findUserByUID(uid)
-
   if (user) {
     res.status(200).json(user)
   } else {

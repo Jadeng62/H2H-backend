@@ -24,6 +24,7 @@ app.get('/', (_req, res) => {
   res.send('Welcome to Firebase Backend Server')
 })
 
+
 // 404 PAGE
 app.get('*', (_req, res) => {
   res.status(404).send('Page not found')

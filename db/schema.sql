@@ -3,25 +3,25 @@ CREATE DATABASE h2h_backend;
 
 \c h2h_backend;
 
-
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
-    uid VARCHAR(255),
-    email VARCHAR(100),
+    uid VARCHAR(255) UNIQUE NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(20) NOT NULL,
     username VARCHAR(100),
     first_name VARCHAR(100),
     last_name VARCHAR(100),
     photo VARCHAR(100),
     dob DATE,
-    user_wins INT,
-    user_losses INT,
-    matches_played INTEGER,
+    user_wins INT DEFAULT 0,
+    user_losses INT DEFAULT 0,
+    matches_played INTEGER DEFAULT 0,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE team (
-    id INTEGER PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     team_name VARCHAR(20),
     team_pic VARCHAR(230),
     logo VARCHAR(230),
@@ -45,15 +45,17 @@ CREATE TABLE team (
 );
 
 CREATE TABLE matches (
-    id INTEGER PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     team1_id INTEGER,
     team2_id INTEGER,
     address VARCHAR(30),
     state VARCHAR(13),
     city VARCHAR(20),
     zip VARCHAR(10),
-    start_datetime DATE,
+    start_datetime TIMESTAMP WITH TIME ZONE,
     match_completed BOOLEAN DEFAULT FALSE,
     match_winner INTEGER DEFAULT NULL,
-    match_loser INTEGER DEFAULT NULL
+    match_loser INTEGER DEFAULT NULL,
+    FOREIGN KEY (team1_id) REFERENCES team(id),
+    FOREIGN KEY (team2_id) REFERENCES team(id)
 );

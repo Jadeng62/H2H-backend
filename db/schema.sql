@@ -21,7 +21,7 @@ CREATE TABLE users (
 );
 
 CREATE TABLE team (
-    id INTEGER PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     team_name VARCHAR(20),
     team_pic VARCHAR(230),
     logo VARCHAR(230),
@@ -45,7 +45,7 @@ CREATE TABLE team (
 );
 
 CREATE TABLE matches (
-    id INTEGER PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     team1_id INTEGER,
     team2_id INTEGER,
     address VARCHAR(30),

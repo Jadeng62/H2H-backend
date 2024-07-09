@@ -3,6 +3,7 @@ const cors = require('cors')
 const express = require('express')
 
 const authController = require('./controllers/authController')
+const matchController = require('./controllers/matchController')
 
 // CONFIGURATION
 const app = express()
@@ -18,6 +19,7 @@ app.use((req, _res, next) => {
 app.use(express.json())
 
 app.use('/api/auth', authController)
+app.use('/api/matches', matchController)
 
 // ROUTES
 app.get('/', (_req, res) => {

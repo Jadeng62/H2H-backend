@@ -30,4 +30,3 @@ INSERT INTO matches (id, team1_id, team2_id, address, state, city, zip, start_da
 VALUES
     (1, 1, 2, '123 Main St', 'CA', 'Los Angeles', '90001', '2024-07-08 14:00:00', TRUE, 1, 2),
     (2, 2, 1, '456 Oak Ave', 'NY', 'New York', '10001', '2024-07-09 15:30:00', TRUE, 2, 1);
--- works if inserted using psql terminal, but for some reason not if using npm run db:seed

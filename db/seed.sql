@@ -12,6 +12,8 @@
 -- the other keys will be used for input forms when user customizes profile / creates matches / wins or loses a match
 -- to query users from firebase use uid (not id)
 
+\c h2h_backend;
+
 -- Insert users
 INSERT INTO users (uid, email, password, username, first_name, last_name, photo, dob, user_wins, user_losses, matches_played, created_at, updated_at)
 VALUES

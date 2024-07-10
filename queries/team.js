@@ -14,6 +14,8 @@ const getAllTeams = async () => {
   }
 };
 
+// make a query for users and teams (to show if they're part of a team)
+
 module.exports = {
   getAllTeams
 };

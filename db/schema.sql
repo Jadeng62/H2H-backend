@@ -16,7 +16,7 @@ CREATE TABLE users (
     user_losses INT DEFAULT 0,
     matches_played INTEGER DEFAULT 0,
     position VARCHAR(100),
-    -- user_team_id INT DEFAULT NULL,
+    user_team_id INT DEFAULT NULL,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );

@@ -4,7 +4,7 @@ CREATE DATABASE h2h_backend;
 \c h2h_backend;
 
 CREATE TABLE users (
-    -- id SERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     uid VARCHAR(255) UNIQUE NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     username VARCHAR(100),

@@ -1,7 +1,5 @@
 const db = require('../db/dbConfig')
 
-const db = require('../db/dbConfig'); // Assuming dbConfig is correctly set up
-
 const getAllTeams = async () => {
   try {
     const query = `

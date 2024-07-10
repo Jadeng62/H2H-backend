@@ -15,28 +15,36 @@
 \c h2h_backend;
 -- uid, email, username, first_name, last_name, photo
 -- Insert users
-INSERT INTO users (uid, email, password, username, first_name, last_name, photo, dob, user_wins, user_losses, matches_played, created_at, updated_at)
-VALUES
-    (1, 'user1@example.com', 'password1', 'user1', 'John', 'Doe', 'user1.jpg', '1990-01-01', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (2, 'user2@example.com', 'password2', 'user2', 'Jane', 'Smith', 'user2.jpg', '1995-05-15', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (3, 'user3@example.com', 'password3', 'user3', 'Michael', 'Johnson', 'user3.jpg', '1988-09-30', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (4, 'user4@example.com', 'password4', 'user4', 'Emily', 'Brown', 'user4.jpg', '1992-03-18', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (5, 'user5@example.com', 'password5', 'user5', 'Matthew', 'Williams', 'user5.jpg', '1993-07-25', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (6, 'user6@example.com', 'password6', 'user6', 'Sophia', 'Jones', 'user6.jpg', '1994-11-12', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (7, 'user7@example.com', 'password7', 'user7', 'Daniel', 'Miller', 'user7.jpg', '1989-04-02', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (8, 'user8@example.com', 'password8', 'user8', 'Olivia', 'Davis', 'user8.jpg', '1991-08-20', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (9, 'user9@example.com', 'password9', 'user9', 'James', 'Garcia', 'user9.jpg', '1996-02-14', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (10, 'user10@example.com', 'password10', 'user10', 'Isabella', 'Rodriguez', 'user10.jpg', '1997-06-30', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-
-
--- INSERT INTO team (id, team_name, team_pic, logo, player1_id, player2_id, player3_id, player4_id, player5_id, captain_id, team_wins, team_loss, matches_played, created_at, updated_at)
+-- INSERT INTO users (uid, email, password, username, first_name, last_name, photo, dob, user_wins, user_losses, matches_played, created_at, updated_at)
 -- VALUES
---     (1, 'Team A', 'team_a_pic.jpg', 'team_a_logo.jpg', 1, 2, 3, 4, 5, 1, 3, 4, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
---     (2, 'Team B', 'team_b_pic.jpg', 'team_b_logo.jpg', 6, 7, 8, 9, 10, 6, 4, 3, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+--     (1, 'user1@example.com', 'password1', 'user1', 'John', 'Doe', 'user1.jpg', '1990-01-01', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+--     (2, 'user2@example.com', 'password2', 'user2', 'Jane', 'Smith', 'user2.jpg', '1995-05-15', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+--     (3, 'user3@example.com', 'password3', 'user3', 'Michael', 'Johnson', 'user3.jpg', '1988-09-30', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+--     (4, 'user4@example.com', 'password4', 'user4', 'Emily', 'Brown', 'user4.jpg', '1992-03-18', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+--     (5, 'user5@example.com', 'password5', 'user5', 'Matthew', 'Williams', 'user5.jpg', '1993-07-25', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+--     (6, 'user6@example.com', 'password6', 'user6', 'Sophia', 'Jones', 'user6.jpg', '1994-11-12', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+--     (7, 'user7@example.com', 'password7', 'user7', 'Daniel', 'Miller', 'user7.jpg', '1989-04-02', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+--     (8, 'user8@example.com', 'password8', 'user8', 'Olivia', 'Davis', 'user8.jpg', '1991-08-20', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+--     (9, 'user9@example.com', 'password9', 'user9', 'James', 'Garcia', 'user9.jpg', '1996-02-14', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+--     (10, 'user10@example.com', 'password10', 'user10', 'Isabella', 'Rodriguez', 'user10.jpg', '1997-06-30', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+-- uids from Firebase
+-- lisa:xyRPCR99eFMuy370hJNsXqQTMMs2
+-- anna:JUJBze4P0iTyo7Md1VJOSGFffza2
+-- olga:imJcQHgkU8dvCLTYIU5HHR46YGH2
+-- lily:ZtVGe5s5XXQmeuPhXwgwcBphGKd2
+-- jeff:JiFzRM68oAh5eKEp7g4aHe5pmkh2
+
+-- sam:jbxWhN2nnUeAst3717q6nSHKe9f1
+-- demo:Udq3thBeYwTXZP6K7Z7WWN78kBp1
+-- jane:SHllyhGebWfURlPFvFARgg7ao6w2
+-- john:CYTa0byE4wNwp4ihgKDKHndw4eM2
+-- Eric:FPvHHVh1M5Rwd45SbQmsXZn00pl2
+
 INSERT INTO team (id, team_name, team_pic, logo, player1_id, player2_id, player3_id, player4_id, player5_id, captain_id, team_wins, team_loss, matches_played, created_at, updated_at)
 VALUES
-    (1, 'Team A', 'team_a_pic.jpg', 'team_a_logo.jpg', '1', '2', '3', '4', '5', '1', 3, 4, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (2, 'Team B', 'team_b_pic.jpg', 'team_b_logo.jpg', '6', '7', '8', '9', '10', '6', 4, 3, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+    (1, 'Team A', 'team_a_pic.jpg', 'team_a_logo.jpg', 'xyRPCR99eFMuy370hJNsXqQTMMs2', 'JUJBze4P0iTyo7Md1VJOSGFffza2', 'imJcQHgkU8dvCLTYIU5HHR46YGH2', 'ZtVGe5s5XXQmeuPhXwgwcBphGKd2', 'JiFzRM68oAh5eKEp7g4aHe5pmkh2', 'xyRPCR99eFMuy370hJNsXqQTMMs2', 3, 4, 7, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (2, 'Team B', 'team_b_pic.jpg', 'team_b_logo.jpg', 'jbxWhN2nnUeAst3717q6nSHKe9f1', 'Udq3thBeYwTXZP6K7Z7WWN78kBp1', 'SHllyhGebWfURlPFvFARgg7ao6w2', 'CYTa0byE4wNwp4ihgKDKHndw4eM2', 'FPvHHVh1M5Rwd45SbQmsXZn00pl2', 'jbxWhN2nnUeAst3717q6nSHKe9f1', 4, 3, 7, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 
 INSERT INTO matches (id, team1_id, team2_id, address, state, city, zip, start_datetime, match_completed, match_winner, match_loser)

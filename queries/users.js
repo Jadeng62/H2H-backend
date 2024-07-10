@@ -1,12 +1,12 @@
 const db = require('../db/dbConfig')
 
 const createNewUser = async (user) => {
-  const { uid, email, username, first_name, last_name, photo } = user
+  const {id, uid, email, username, first_name, last_name, photo, dob, position } = user
 
   try {
     const newUser = await db.one(
-      'INSERT INTO users (uid, email, username, first_name, last_name, photo) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *',
-      [uid, email, username, first_name, last_name, photo]
+      'INSERT INTO users (uid, email, username, first_name, last_name, photo, dob, position) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *',
+      [id, uid, email, username, first_name, last_name, photo, dob, position]
     )
 
     return newUser

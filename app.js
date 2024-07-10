@@ -4,6 +4,7 @@ const express = require('express')
 
 const authController = require('./controllers/authController')
 const matchController = require('./controllers/matchController')
+const teamController = require('./controllers/teamController');
 
 // CONFIGURATION
 const app = express()
@@ -19,6 +20,7 @@ app.use((req, _res, next) => {
 app.use(express.json())
 
 app.use('/api/auth', authController)
+app.use('/api/team', teamController)
 app.use('/api/matches', matchController)
 
 // ROUTES

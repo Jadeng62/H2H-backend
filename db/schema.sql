@@ -40,6 +40,12 @@ CREATE TABLE team (
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
+-- CREATE TABLE team_captains (
+--     team_id SERIAL PRIMARY KEY,
+--     captain_id INT REFERENCES users(id) ON DELETE CASCADE,
+--     FOREIGN KEY (team_id) REFERENCES team(id) ON DELETE CASCADE
+-- );
+
 CREATE TABLE matches (
     id SERIAL PRIMARY KEY,
     team1_id INTEGER REFERENCES team(id) ON DELETE CASCADE,

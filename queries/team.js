@@ -13,6 +13,16 @@ const createTeam = async (teamInfo) => {
 }
 
 
+const updateTeam = async (teamInfo, team_id) => {
+  const {team_name, team_pic, logo, point_guard_id, shooting_guard_id, small_forward_id, power_forward_id, center_id, captain_id, team_wins, team_loss, matches_played} = teamInfo
+  try {
+    const query = 'UPDATE team SET team_name=$1, team_pic=$2, logo=$3, point_guard_id=$4, shooting_guard_id=$5, small_forward_id=$6, power_forward_id=$7, center_id=$8, captain_id=$9, team_wins=$10, team_loss=$11, matches_played=$12 WHERE id=$13 RETURNING *'
+    const updatedTeam = await db.one(query, [team_name, team_pic, logo, point_guard_id, shooting_guard_id, small_forward_id, power_forward_id, center_id, captain_id, team_wins, team_loss, matches_played, Number(team_id)])
+    return updatedTeam
+  } catch (error) {
+    throw error
+  }
+}
 
 const getAllTeams = async (id) => {
     try {
@@ -49,5 +59,6 @@ module.exports = {
   getAllTeams,
   createTeam,
   getTeamByTeamId,
-  getTeamByPlayerId
+  getTeamByPlayerId,
+  updateTeam
 };

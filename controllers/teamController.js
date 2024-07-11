@@ -1,6 +1,7 @@
 const express = require('express')
 const team = express.Router()
-const { getAllTeams, createTeam } = require('../queries/team')
+const { getAllTeams, createTeam, getTeamByTeamId, getTeamByPlayerId} = require('../queries/team')
+
 
 
  team.post("/", async (req, res) => {
@@ -14,15 +15,43 @@ const { getAllTeams, createTeam } = require('../queries/team')
    }
  })
 
-
 team.get('/', async (req, res) => {
-  try {
-    const teams = await getAllTeams();
-    res.json(teams);
-  } catch (error) {
-    console.error('Error fetching teams:', error);
-    res.status(500).json({ error: 'Internal server error' });
+  const {player_id} = req.query
+  
+  if(player_id){
+    try {
+      const oneTeam = await getTeamByPlayerId(player_id)
+      if(oneTeam){
+        res.status(200).json(oneTeam)
+      }else{
+        res.status(404).json({ error: 'Team with specified player ID could not be found.'})
+      }
+    } catch (error) {
+      res.status(500).json({ error: 'Internal server error'})
+    }
+
+  }else{
+    try {
+      const teams = await getAllTeams();
+      res.json(teams);
+    } catch (error) {
+      console.error('Error fetching teams:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
   }
 });
 
+team.get('/:id', async (req,res)=> {
+  const {id} = req.params
+  try {
+    const oneTeam = await getTeamByTeamId(id)
+    if(oneTeam){
+      res.status(200).json(oneTeam)
+    }else{
+      res.status(404).json({ error: 'Team with specified ID could not be found' });
+    }
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+})
 module.exports = team;

@@ -15,7 +15,7 @@ const { getAllTeams, createTeam } = require('../queries/team')
  })
 
 
-team.get('/allteams', async (req, res) => {
+team.get('/', async (req, res) => {
   try {
     const teams = await getAllTeams();
     res.json(teams);

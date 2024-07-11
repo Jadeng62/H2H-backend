@@ -20,7 +20,7 @@ app.use((req, _res, next) => {
 app.use(express.json())
 
 app.use('/api/auth', authController)
-app.use('/api/team', teamController)
+app.use('/api/teams', teamController)
 app.use('/api/matches', matchController)
 
 // ROUTES

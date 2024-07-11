@@ -27,18 +27,24 @@ CREATE TABLE team (
     team_name VARCHAR(100),
     team_pic VARCHAR(255),
     logo VARCHAR(255),
-    player1_id VARCHAR(255) REFERENCES users(uid) ON DELETE CASCADE,
-    player2_id VARCHAR(255) REFERENCES users(uid) ON DELETE CASCADE,
-    player3_id VARCHAR(255) REFERENCES users(uid) ON DELETE CASCADE,
-    player4_id VARCHAR(255) REFERENCES users(uid) ON DELETE CASCADE,
-    player5_id VARCHAR(255) REFERENCES users(uid) ON DELETE CASCADE,
-    captain_id VARCHAR(255) REFERENCES users(uid) ON DELETE CASCADE,
+    player1_id INT REFERENCES users(id) ON DELETE CASCADE,
+    player2_id INT REFERENCES users(id) ON DELETE CASCADE,
+    player3_id INT REFERENCES users(id) ON DELETE CASCADE,
+    player4_id INT REFERENCES users(id) ON DELETE CASCADE,
+    player5_id INT REFERENCES users(id) ON DELETE CASCADE,
+    captain_id INT REFERENCES users(id) ON DELETE CASCADE,
     team_wins INTEGER,
     team_loss INTEGER,
     matches_played INTEGER,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
+
+-- CREATE TABLE team_captains (
+--     team_id SERIAL PRIMARY KEY,
+--     captain_id INT REFERENCES users(id) ON DELETE CASCADE,
+--     FOREIGN KEY (team_id) REFERENCES team(id) ON DELETE CASCADE
+-- );
 
 CREATE TABLE matches (
     id SERIAL PRIMARY KEY,

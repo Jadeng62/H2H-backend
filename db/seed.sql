@@ -31,23 +31,23 @@ VALUES
 
 -- uids from Firebase
 -- Team A
--- lisa:xyRPCR99eFMuy370hJNsXqQTMMs2
--- anna:JUJBze4P0iTyo7Md1VJOSGFffza2
--- olga:imJcQHgkU8dvCLTYIU5HHR46YGH2
--- lily:ZtVGe5s5XXQmeuPhXwgwcBphGKd2
--- jeff:JiFzRM68oAh5eKEp7g4aHe5pmkh2
+-- lisa:xyRPCR99eFMuy370hJNsXqQTMMs2 - 1
+-- anna:JUJBze4P0iTyo7Md1VJOSGFffza2 - 2
+-- olga:imJcQHgkU8dvCLTYIU5HHR46YGH2 - 3
+-- lily:ZtVGe5s5XXQmeuPhXwgwcBphGKd2 - 4
+-- jeff:JiFzRM68oAh5eKEp7g4aHe5pmkh2 - 5
 
 -- Team B
--- barry:pEG6Va8IRzgJD8ajBno0jWuJijC2
--- greta:C9vRjJatYEdejvHJBMqNaoaegyK2
--- jane:SHllyhGebWfURlPFvFARgg7ao6w2
--- john:CYTa0byE4wNwp4ihgKDKHndw4eM2
--- Eric:FPvHHVh1M5Rwd45SbQmsXZn00pl2
+-- barry:pEG6Va8IRzgJD8ajBno0jWuJijC2 - 6
+-- greta:C9vRjJatYEdejvHJBMqNaoaegyK2 - 9
+-- jane:SHllyhGebWfURlPFvFARgg7ao6w2 - 7
+-- john:CYTa0byE4wNwp4ihgKDKHndw4eM2 - 8
+-- Eric:FPvHHVh1M5Rwd45SbQmsXZn00pl2 - 10
 
 INSERT INTO team (team_name, team_pic, logo, player1_id, player2_id, player3_id, player4_id, player5_id, captain_id, team_wins, team_loss, matches_played, created_at, updated_at)
 VALUES
-    ('Team A', 'team_a_pic.jpg', 'team_a_logo.jpg', 'xyRPCR99eFMuy370hJNsXqQTMMs2', 'JUJBze4P0iTyo7Md1VJOSGFffza2', 'imJcQHgkU8dvCLTYIU5HHR46YGH2', 'ZtVGe5s5XXQmeuPhXwgwcBphGKd2', 'JiFzRM68oAh5eKEp7g4aHe5pmkh2', 'xyRPCR99eFMuy370hJNsXqQTMMs2', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('Team B', 'team_b_pic.jpg', 'team_b_logo.jpg', 'C9vRjJatYEdejvHJBMqNaoaegyK2', 'pEG6Va8IRzgJD8ajBno0jWuJijC2', 'SHllyhGebWfURlPFvFARgg7ao6w2', 'CYTa0byE4wNwp4ihgKDKHndw4eM2', 'FPvHHVh1M5Rwd45SbQmsXZn00pl2', 'C9vRjJatYEdejvHJBMqNaoaegyK2', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+    ('Team A', 'team_a_pic.jpg', 'team_a_logo.jpg', 1, 2, 3, 4, 5, 1, 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Team B', 'team_b_pic.jpg', 'team_b_logo.jpg', 9, 6, 7, 8, 10, 9, 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 
 -- INSERT INTO matches (team1_id, team2_id, address, state, city, zip, start_datetime, match_completed, match_winner, match_loser)

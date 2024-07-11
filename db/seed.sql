@@ -44,7 +44,7 @@ VALUES
 -- john:CYTa0byE4wNwp4ihgKDKHndw4eM2 - 8
 -- Eric:FPvHHVh1M5Rwd45SbQmsXZn00pl2 - 10
 
-INSERT INTO team (team_name, team_pic, logo, player1_id, player2_id, player3_id, player4_id, player5_id, captain_id, team_wins, team_loss, matches_played, created_at, updated_at)
+INSERT INTO team (team_name, team_pic, logo, point_guard_id, shooting_guard_id, small_forward_id, power_forward_id, center_id, captain_id, team_wins, team_loss, matches_played, created_at, updated_at)
 VALUES
     ('Team A', 'team_a_pic.jpg', 'team_a_logo.jpg', 1, 2, 3, 4, 5, 1, 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
     ('Team B', 'team_b_pic.jpg', 'team_b_logo.jpg', 9, 6, 7, 8, 10, 9, 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);

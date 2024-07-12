@@ -15,7 +15,7 @@ INSERT INTO users (id, uid, user_team_id, position, email, username, first_name,
 VALUES
     (1,'xyRPCR99eFMuy370hJNsXqQTMMs2',1,'point guard', 'lisadoe@mail.com', 'user1', 'Lisa', 'Doe', 'user1.jpg', '1990-01-01', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
     (2,'JUJBze4P0iTyo7Md1VJOSGFffza2',1,'shooting guard', 'annadoe@mail.com', 'user2', 'Anna', 'Doe', 'user2.jpg', '1995-05-15', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (3,'imJcQHgkU8dvCLTYIU5HHR46YGH2',1,'small forward', 'olga@mail.com', 'user3', 'Olga', 'Doe', 'user3.jpg', '1988-09-30', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (3,'imJcQHgkU8dvCLTYIU5HHR46YGH2',1,'small forward', 'olga@mail.com', 'user3', 'Olga', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815631/H2H/brian-lawson-PY3VNWIDYhE-unsplash_dzx7dp.jpg', '1988-09-30', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
     (4,'ZtVGe5s5XXQmeuPhXwgwcBphGKd2',1, 'power forward', 'lilydoe4@mail.com', 'user4', 'Lily', 'Doe', 'user4.jpg', '1992-03-18', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
     (5,'JiFzRM68oAh5eKEp7g4aHe5pmkh2',1, 'center', 'jeffdoe@mail.com', 'user5', 'Jeff', 'Doe', 'user5.jpg', '1993-07-25', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
     (6,'pEG6Va8IRzgJD8ajBno0jWuJijC2',2, 'point guard','barrydoe@mail.com', 'user6', 'Barry', 'Doe', 'user6.jpg', '1994-11-12', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
@@ -29,13 +29,13 @@ VALUES
     (12,'SHllyhGebWfURlPFvFARig7ao6w2',3, 'shooting guard','janettdoe@mail.com', 'user12', 'Janett', 'Doe', 'user7.jpg', '1989-04-02', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
     (13,'CYTa0byE4wNwp4ihgKDiHndw4eM2',3, 'small forward', 'johnnydoe@mail.com', 'user13', 'Johnny', 'Doe', 'user8.jpg', '1991-08-20', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
     (14,'C9vRjJatYEdejvHJBMqiaoaegyK2',3, 'power forward','grootdoe@mail.com', 'user14', 'Groot', 'Doe', 'user9.jpg', '1996-02-14', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (15,'FPvHHVh1M5Rwd45SbQisXZn00pl2',3, 'center','ericadoe@mail.com', 'user15', 'Erica', 'Doe', 'user10.jpg', '1997-06-30', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+    (15,'FPvHHVh1M5Rwd45SbQisXZn00pl2',3, 'center','ericadoe@mail.com', 'user15', 'Erica', 'Doe', 'user10.jpg', '1997-06-30', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
 
-    -- (16, 'auth_id_for_Desiree', NULL, NULL, 'desireedoe@mail.com', 'user16', 'Desiree', 'Doe', NULL, '1995-03-18', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    -- (17, 'auth_id_for_Matthew', NULL, NULL, 'matthewdoe@mail.com', 'user17', 'Matthew', 'Doe', NULL, '1993-12-05', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    -- (18, 'auth_id_for_Adele', NULL, NULL, 'adeledoe@mail.com', 'user18', 'Adele', 'Doe', NULL, '1988-09-22', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    -- (19, 'auth_id_for_Britney', NULL, NULL, 'britneydoe@mail.com', 'user19', 'Britney', 'Doe', NULL, '1990-11-08', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    -- (20, 'auth_id_for_Leo', NULL, NULL, 'leodoe@mail.com', 'user20', 'Leo', 'Doe', NULL, '1987-07-15', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+    (16, 'auth_id_for_Desiree', NULL, NULL, 'desireedoe@mail.com', 'user16', 'Desiree', 'Doe', NULL, '1995-03-18', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (17, 'auth_id_for_Matthew', NULL, NULL, 'matthewdoe@mail.com', 'user17', 'Matthew', 'Doe', NULL, '1993-12-05', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (18, 'auth_id_for_Adele', NULL, NULL, 'adeledoe@mail.com', 'user18', 'Adele', 'Doe', NULL, '1988-09-22', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (19, 'auth_id_for_Britney', NULL, NULL, 'britneydoe@mail.com', 'user19', 'Britney', 'Doe', NULL, '1990-11-08', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (20, 'auth_id_for_Leo', NULL, NULL, 'leodoe@mail.com', 'user20', 'Leo', 'Doe', NULL, '1987-07-15', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 -- uids from Firebase
 -- Team A
 -- lisa:xyRPCR99eFMuy370hJNsXqQTMMs2 - 1

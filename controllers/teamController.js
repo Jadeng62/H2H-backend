@@ -1,6 +1,7 @@
 const express = require('express')
 const team = express.Router()
 const { getAllTeams, createTeam, getTeamByTeamId, getTeamByPlayerId, updateTeam} = require('../queries/team')
+const { getUsersByTeamID } = require('../queries/users')
 
 
 
@@ -65,6 +66,20 @@ team.get('/:id', async (req,res)=> {
     }
   } catch (error) {
     res.status(500).json({ error: 'Internal server error' });
+  }
+})
+
+team.get('/:id/users', async(req,res) => {
+  const { id } = req.params
+  try {
+    const teamUsers = await getUsersByTeamID(id)
+    if(teamUsers){
+      res.status(200).json(teamUsers)
+    }else{
+      res.status(404).json({ error: 'Could not find users for specified team ID'})
+    }
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error'})
   }
 })
 module.exports = team;

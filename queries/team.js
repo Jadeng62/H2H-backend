@@ -55,6 +55,8 @@ const getTeamByPlayerId = async (player_id) =>{
     throw error
   }
 }
+
+
 module.exports = {
   getAllTeams,
   createTeam,

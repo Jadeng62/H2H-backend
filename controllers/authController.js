@@ -23,4 +23,17 @@ auth.get("/user/:uid", authMiddleware, async (req, res) => {
   }
 });
 
-module.exports = auth;
+
+auth.get("/user/single/:id", async (req, res) => {
+  const { id } = req.params;
+  const user = await findUserByID(id);
+  if (user) {
+    res.status(200).json(user);
+  } else {
+    res.status(500).json({ error: "Error fetching user" });
+  }
+});
+
+
+module.exports = auth
+

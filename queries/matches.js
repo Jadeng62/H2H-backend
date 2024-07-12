@@ -52,15 +52,15 @@ const getAllMatchesByPlayerID = async (playerID) => {
 }
 
 const createMatch = async (matchInfo) => {
-  const {team1_id, team2_id, address, state, city, zip, start_datetime, match_completed, match_winner, match_loser } = matchInfo 
+  const {team1_id, team2_id, address, state, city, zip, start_datetime, match_completed, match_winner, match_loser } = matchInfo;
  try {
-   const query = `INSERT INTO matches (team1_id, team2_id, address, state, city, zip, start_datetime, match_completed, match_winner, match_loser) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING * `
+   const query = `INSERT INTO matches (team1_id, team2_id, address, state, city, zip, start_datetime, match_completed, match_winner, match_loser) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING * `;
     const newMatch = await db.one(query, [team1_id, team2_id, address, state, city, zip, start_datetime, match_completed, match_winner, match_loser]);
       return newMatch;
- } catch (err) {;
-   throw new Error(err)
- }
-}
+ } catch (err) {
+   throw new Error(err);
+ };
+};
 
 const editMatch = async (matchInfo, id) =>{
   const {team1_id, team2_id, address, state, city, zip, start_datetime, match_completed, match_winner, match_loser } = matchInfo 

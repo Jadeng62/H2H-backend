@@ -16,12 +16,11 @@ CREATE TABLE users (
     user_losses INT DEFAULT 0,
     matches_played INTEGER DEFAULT 0,
     position VARCHAR(100),
-    user_team_id INT DEFAULT NULL,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- added CASCADE so that if a user in users table (referenced by uid) is deleted corresponding team records where columns reference that user will also be deleted automatically!!
+
 CREATE TABLE team (
     id SERIAL PRIMARY KEY,
     team_name VARCHAR(100),

@@ -1,11 +1,9 @@
 const express = require('express')
 const match = express.Router()
-const { getAllMatches, getAllMatchesByTeamID, getMatchByMatchID, getAllMatchesByPlayerID } = require('../queries/matches')
+const { getAllMatches, getAllMatchesByTeamID, getMatchByMatchID, getAllMatchesByPlayerID, createMatch, editMatch } = require('../queries/matches')
 
 match.get('/', async (req,res) => {
     const {team_id, player_id} = req.query
-    console.log(player_id|| 'No player ID')
-    console.log(team_id||'No team ID')
     // Route to get all matches for a specific team
     if(team_id){
         try {
@@ -52,6 +50,33 @@ match.get('/:id', async (req,res) => {
         }
     } catch (error) {
         res.status(500).json({error: 'Server error'})
+    }
+})
+
+match.post('/', async (req,res) =>{
+    try {
+        const newMatch = await createMatch(req.body)
+        if(newMatch){
+            res.status(200).json(newMatch)
+        }else{
+            res.status(404).json({ error: 'Match could not be created'})
+        }
+    } catch (error) {
+        res.status(500).json({ error: 'Internal server error' })
+    }
+})
+
+match.put('/:id', async (req,res) =>{
+    const { id } = req.params
+    try {
+        const updatedMatch = await editMatch(req.body, id)
+        if(updatedMatch){
+            res.status(200).json(updatedMatch)
+        }else{
+            res.status(404).json({ error: 'Match with specified ID could not be updated'})
+        }
+    } catch (error) {
+        res.status(500).json({ error: 'Internal server error'})
     }
 })
 

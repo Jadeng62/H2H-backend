@@ -72,11 +72,27 @@ const editMatch = async (matchInfo, id) =>{
     throw error
   }
 }
+
+
+const deleteMatch = async (id) => {
+   try {
+  const deletedMatch = await db.one("DELETE FROM matches WHERE id=$1 RETURNING *", id )
+
+   return deletedMatch
+   } catch (err) {
+    throw err
+   }
+}
+
+
+
+
 module.exports = {
   getAllMatches,
   getMatchByMatchID,
   getAllMatchesByTeamID,
   getAllMatchesByPlayerID,
   createMatch,
-  editMatch
+  editMatch,
+  deleteMatch
 }

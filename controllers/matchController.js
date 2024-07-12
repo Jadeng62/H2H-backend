@@ -1,6 +1,6 @@
 const express = require('express')
 const match = express.Router()
-const { getAllMatches, getAllMatchesByTeamID, getMatchByMatchID, getAllMatchesByPlayerID, createMatch, editMatch } = require('../queries/matches')
+const { getAllMatches, getAllMatchesByTeamID, getMatchByMatchID, getAllMatchesByPlayerID, createMatch, editMatch, deleteMatch } = require('../queries/matches')
 
 match.get('/', async (req,res) => {
     const {team_id, player_id} = req.query
@@ -78,6 +78,17 @@ match.put('/:id', async (req,res) =>{
     } catch (error) {
         res.status(500).json({ error: 'Internal server error'})
     }
+})
+
+match.delete("/:id", async (req, res) => {
+    const {id} = req.params
+
+     try {
+        const deletedMatch = await deleteMatch(id)
+         res.json(deletedMatch)
+     } catch (err) {
+        res.status(500).json({ error: 'Internal server error'})
+     }
 })
 
 module.exports = match

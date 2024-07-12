@@ -11,7 +11,7 @@ CREATE TABLE users (
     user_team_id INT DEFAULT NULL,
     first_name VARCHAR(100),
     last_name VARCHAR(100),
-    photo VARCHAR(100),
+    photo TEXT,
     dob DATE,
     user_wins INT DEFAULT 0,
     user_losses INT DEFAULT 0,

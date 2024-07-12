@@ -23,11 +23,19 @@ VALUES
     (8,'CYTa0byE4wNwp4ihgKDKHndw4eM2',2, 'small forward', 'johndoe@mail.com', 'user8', 'John', 'Doe', 'user8.jpg', '1991-08-20', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
     (9,'C9vRjJatYEdejvHJBMqNaoaegyK2',2, 'power forward','gretadoe@mail.com', 'user9', 'Greta', 'Doe', 'user9.jpg', '1996-02-14', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
     (10,'FPvHHVh1M5Rwd45SbQmsXZn00pl2',2, 'center','ericdoe@mail.com', 'user10', 'Eric', 'Doe', 'user10.jpg', '1997-06-30', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+
+    -- barney, janette, johnny, groot, erica are registered users but uid needs to be updated to the one that's actually in firebase
     (11,'pEG6Va8IRzgJD8ajBno0iWuJijC2',3, 'point guard','barneydoe@mail.com', 'user11', 'Barney', 'Doe', 'user6.jpg', '1994-11-12', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
     (12,'SHllyhGebWfURlPFvFARig7ao6w2',3, 'shooting guard','janettdoe@mail.com', 'user12', 'Janett', 'Doe', 'user7.jpg', '1989-04-02', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
     (13,'CYTa0byE4wNwp4ihgKDiHndw4eM2',3, 'small forward', 'johnnydoe@mail.com', 'user13', 'Johnny', 'Doe', 'user8.jpg', '1991-08-20', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
     (14,'C9vRjJatYEdejvHJBMqiaoaegyK2',3, 'power forward','grootdoe@mail.com', 'user14', 'Groot', 'Doe', 'user9.jpg', '1996-02-14', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
     (15,'FPvHHVh1M5Rwd45SbQisXZn00pl2',3, 'center','ericadoe@mail.com', 'user15', 'Erica', 'Doe', 'user10.jpg', '1997-06-30', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+    -- (16, 'auth_id_for_Desiree', NULL, NULL, 'desireedoe@mail.com', 'user16', 'Desiree', 'Doe', NULL, '1995-03-18', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    -- (17, 'auth_id_for_Matthew', NULL, NULL, 'matthewdoe@mail.com', 'user17', 'Matthew', 'Doe', NULL, '1993-12-05', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    -- (18, 'auth_id_for_Adele', NULL, NULL, 'adeledoe@mail.com', 'user18', 'Adele', 'Doe', NULL, '1988-09-22', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    -- (19, 'auth_id_for_Britney', NULL, NULL, 'britneydoe@mail.com', 'user19', 'Britney', 'Doe', NULL, '1990-11-08', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    -- (20, 'auth_id_for_Leo', NULL, NULL, 'leodoe@mail.com', 'user20', 'Leo', 'Doe', NULL, '1987-07-15', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 -- uids from Firebase
 -- Team A
 -- lisa:xyRPCR99eFMuy370hJNsXqQTMMs2 - 1

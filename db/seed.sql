@@ -31,7 +31,7 @@
 -- erica:
 
 -- No Team Assigned
--- Desiree:
+-- Desiree: 
 -- Matthew:
 -- Adele:
 -- Britney:
@@ -51,17 +51,17 @@ VALUES
     (10,'FPvHHVh1M5Rwd45SbQmsXZn00pl2',2, 'center','ericdoe@mail.com', 'user10', 'Eric', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815647/H2H/emrecan-arik-apJKb2Js_Vg-unsplash_qjrslb.jpg', '1997-06-30', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
 
     -- barney, janette, johnny, groot, erica are registered users but uid needs to be updated to the one that's actually in firebase
-    (11,'pEG6Va8IRzgJD8ajBno0iWuJijC2',3, 'point guard','barneydoe@mail.com', 'user11', 'Barney', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815656/H2H/julian-myles-I2g6Oe9ElbE-unsplash_ivqnx0.jpg', '1994-11-12', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (12,'SHllyhGebWfURlPFvFARig7ao6w2',3, 'shooting guard','janettdoe@mail.com', 'user12', 'Janett', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815651/H2H/gabriel-silverio-u3WmDyKGsrY-unsplash_glpbn7.jpg', '1989-04-02', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (13,'CYTa0byE4wNwp4ihgKDiHndw4eM2',3, 'small forward', 'johnnydoe@mail.com', 'user13', 'Johnny', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815659/H2H/josh-scorpio-H3Tuh0hwYQk-unsplash_ohgnai.jpg', '1991-08-20', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (14,'C9vRjJatYEdejvHJBMqiaoaegyK2',3, 'power forward','grootdoe@mail.com', 'user14', 'Groot', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815665/H2H/karsten-winegeart-Nz0d2wxw0t4-unsplash_hwadtn.jpg', '1996-02-14', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (15,'FPvHHVh1M5Rwd45SbQisXZn00pl2',3, 'center','ericadoe@mail.com', 'user15', 'Erica', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815654/H2H/jason-moyer-7JmGPyljOSE-unsplash_vytxg2.jpg', '1997-06-30', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (11,'1VkAfJdTH5OSZtrqvpexsCMPMyx2',3, 'point guard','barneydoe@mail.com', 'user11', 'Barney', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815656/H2H/julian-myles-I2g6Oe9ElbE-unsplash_ivqnx0.jpg', '1994-11-12', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (12,'nY3Kz1iJifVRfIRHlvSmzI7zoW03',3, 'shooting guard','janettdoe@mail.com', 'user12', 'Janett', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815651/H2H/gabriel-silverio-u3WmDyKGsrY-unsplash_glpbn7.jpg', '1989-04-02', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (13,'aWcL4rlAFLSndBJAFESnBSjHzYz2',3, 'small forward', 'johnnydoe@mail.com', 'user13', 'Johnny', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815659/H2H/josh-scorpio-H3Tuh0hwYQk-unsplash_ohgnai.jpg', '1991-08-20', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (14,'xNQDT50b1ubAnFGeQ1wMTHZNspI2',3, 'power forward','grootdoe@mail.com', 'user14', 'Groot', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815665/H2H/karsten-winegeart-Nz0d2wxw0t4-unsplash_hwadtn.jpg', '1996-02-14', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (15,'q6yZqvIn8SgYaajKDCpXbXjpEsJ2',3, 'center','ericadoe@mail.com', 'user15', 'Erica', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815654/H2H/jason-moyer-7JmGPyljOSE-unsplash_vytxg2.jpg', '1997-06-30', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
 
-    (16, 'auth_id_for_Desiree', NULL, NULL, 'desireedoe@mail.com', 'user16', 'Desiree', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815661/H2H/kimson-doan-HD8KlyWRYYM-unsplash_strpc2.jpg', '1995-03-18', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (17, 'auth_id_for_Matthew', NULL, NULL, 'matthewdoe@mail.com', 'user17', 'Matthew', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815665/H2H/karabo-mdluli-nRwJaWg7McU-unsplash_hcuaid.jpg', '1993-12-05', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (18, 'auth_id_for_Adele', NULL, NULL, 'adeledoe@mail.com', 'user18', 'Adele', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815673/H2H/omid-armin-g9dpfgrSyR8-unsplash_ng4vc0.jpg', '1988-09-22', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (19, 'auth_id_for_Britney', NULL, NULL, 'britneydoe@mail.com', 'user19', 'Britney', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815684/H2H/prince-akachi-J1OScm_uHUQ-unsplash_kocdrs.jpg', '1990-11-08', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (20, 'auth_id_for_Leo', NULL, NULL, 'leodoe@mail.com', 'user20', 'Leo', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815691/H2H/rodney-gainous-jr-p_VF71muhRs-unsplash_eppcl1.jpg', '1987-07-15', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+    (16, 'hBylnkSsVUUjNhlCBAtTnX2EN893', NULL, NULL, 'desireedoe@mail.com', 'user16', 'Desiree', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815661/H2H/kimson-doan-HD8KlyWRYYM-unsplash_strpc2.jpg', '1995-03-18', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (17, '3lHMYdPmI5ejx41vf4A3zASoz0g2', NULL, NULL, 'matthewdoe@mail.com', 'user17', 'Matthew', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815665/H2H/karabo-mdluli-nRwJaWg7McU-unsplash_hcuaid.jpg', '1993-12-05', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (18, 'LUrxqd3Ov9TuYPVWOHcx6ysaEOg1', NULL, NULL, 'adeledoe@mail.com', 'user18', 'Adele', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815673/H2H/omid-armin-g9dpfgrSyR8-unsplash_ng4vc0.jpg', '1988-09-22', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (19, '9YGrpeiOfpTW3vHwEblaxHoor3n2', NULL, NULL, 'britneydoe@mail.com', 'user19', 'Britney', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815684/H2H/prince-akachi-J1OScm_uHUQ-unsplash_kocdrs.jpg', '1990-11-08', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (20, 'Qh1UJsv9pfUOhAEkcmIHbvww3ly1', NULL, NULL, 'leodoe@mail.com', 'user20', 'Leo', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815691/H2H/rodney-gainous-jr-p_VF71muhRs-unsplash_eppcl1.jpg', '1987-07-15', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 
 INSERT INTO team (team_name, team_pic, logo, point_guard_id, shooting_guard_id, small_forward_id, power_forward_id, center_id, captain_id, team_wins, team_loss, matches_played, created_at, updated_at)

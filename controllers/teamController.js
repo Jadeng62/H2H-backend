@@ -19,6 +19,17 @@ team.post("/", async (req, res) => {
   }
 });
 
+// team.post('/', async (req, res) => {
+//   try {
+//       const { team_name, team_pic, logo, captain_id } = req.body;
+//       const newTeam = await createTeam({ team_name, team_pic, logo, captain_id });
+//       res.status(200).json(newTeam);
+//   } catch (error) {
+//       console.error('Error creating team:', error);
+//       res.status(500).json({ error: 'Internal server error' });
+//   }
+// });
+
 team.put("/:id", async (req, res) => {
   const { id } = req.params;
   try {

@@ -31,7 +31,7 @@
 -- erica:
 
 -- No Team Assigned
--- Desiree:
+-- Desiree: 
 -- Matthew:
 -- Adele:
 -- Britney:
@@ -51,6 +51,7 @@ VALUES
     ('FPvHHVh1M5Rwd45SbQmsXZn00pl2',2, 'center','ericdoe@mail.com', 'user10', 'Eric', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815647/H2H/emrecan-arik-apJKb2Js_Vg-unsplash_qjrslb.jpg', '1997-06-30', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
 
     -- barney, janette, johnny, groot, erica are registered users but uid needs to be updated to the one that's actually in firebase
+
     ('pEG6Va8IRzgJD8ajBno0iWuJijC2',3, 'point guard','barneydoe@mail.com', 'user11', 'Barney', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815656/H2H/julian-myles-I2g6Oe9ElbE-unsplash_ivqnx0.jpg', '1994-11-12', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
     ('SHllyhGebWfURlPFvFARig7ao6w2',3, 'shooting guard','janettdoe@mail.com', 'user12', 'Janett', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815651/H2H/gabriel-silverio-u3WmDyKGsrY-unsplash_glpbn7.jpg', '1989-04-02', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
     ('CYTa0byE4wNwp4ihgKDiHndw4eM2',3, 'small forward', 'johnnydoe@mail.com', 'user13', 'Johnny', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815659/H2H/josh-scorpio-H3Tuh0hwYQk-unsplash_ohgnai.jpg', '1991-08-20', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),

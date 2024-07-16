@@ -1,17 +1,34 @@
 const db = require('../db/dbConfig')
 
+// const createTeam = async (teamInfo) => {
+//    const {team_name, captain_id, captain_position} = teamInfo 
+//     // console.log(teamInfo)
+//   try {
+//     const query = `INSERT INTO TEAM(team_name, captain_id, ${captain_position}_id) VALUES($1, $2, $3) RETURNING * `
+//      const newTeam = await db.one(query, [team_name, captain_id, captain_id]);
+//        return newTeam;
+//   } catch (err) {;
+//     throw new Error(err)
+//   }
+// }
 const createTeam = async (teamInfo) => {
-   const {team_name, captain_id, captain_position} = teamInfo 
-    // console.log(teamInfo)
-  try {
-    const query = `INSERT INTO TEAM(team_name, captain_id, ${captain_position}_id) VALUES($1, $2, $3) RETURNING * `
-     const newTeam = await db.one(query, [team_name, captain_id, captain_id]);
-       return newTeam;
-  } catch (err) {;
-    throw new Error(err)
-  }
-}
+  const { team_name, team_pic, logo, captain_id } = teamInfo;
 
+  try {
+      const query = `
+          INSERT INTO team(team_name, team_pic, logo, captain_id)
+          VALUES($1, $2, $3, $4)
+          RETURNING *
+      `;
+
+      const newTeam = await db.one(query, [team_name, team_pic, logo, captain_id]);
+
+      return newTeam;
+
+  } catch (err) {
+      throw new Error(err.message || err);
+  }
+};
 
 const updateTeam = async (teamInfo, team_id) => {
   const {team_name, team_pic, logo, point_guard_id, shooting_guard_id, small_forward_id, power_forward_id, center_id, captain_id, team_wins, team_loss, matches_played} = teamInfo

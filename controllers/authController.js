@@ -1,7 +1,7 @@
 const express = require("express");
 const auth = express.Router();
 const authMiddleware = require("../middlewares/authMiddleware");
-const { createNewUser, findUserByUID } = require("../queries/users.js");
+const { createNewUser, findUserByUID, deleteUserByID } = require("../queries/users.js");
 
 auth.post("/register", async (req, res) => {
   const newUser = await createNewUser(req.body);
@@ -33,6 +33,13 @@ auth.get("/user/single/:id", async (req, res) => {
     res.status(500).json({ error: "Error fetching user" });
   }
 });
+
+auth.delete("user/:id", async (req, res) => {
+  const { id, uid } = req.params;
+  const user = await deleteUserByID(id);
+
+   return res.status(200) ? res.status(200) : res.status(404); 
+})
 
 
 module.exports = auth

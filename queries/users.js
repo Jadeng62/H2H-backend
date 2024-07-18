@@ -39,7 +39,7 @@ const findUserByUID = async (uid) => {
 
 const getUsersByTeamID = async (teamID) => {
   try {
-    const query = `SELECT id, first_name, last_name, username, user_wins, user_losses, matches_played, photo, position
+    const query = `SELECT id, first_name, last_name, username, user_team_id, user_wins, user_losses, matches_played, photo, position
       FROM users
       WHERE id IN (
         SELECT point_guard_id FROM team WHERE id = $1
@@ -71,9 +71,27 @@ const findUserByID = async (id) => {
     throw error; // Make sure to throw the error to handle it in the calling code
   }
 };
+
+const deleteUserByID = async (id) => {
+  try {
+    const query = "DELETE * FROM users WHERE id = $1"
+     const user = await db.one(query, [id])
+
+      return user
+  } catch (err) {
+    console.error("Error with Delete:", err);
+    throw err;
+  }
+}
+
+
+
+
+
 module.exports = {
   createNewUser,
   findUserByUID,
   getUsersByTeamID,
   findUserByID,
+  deleteUserByID
 };

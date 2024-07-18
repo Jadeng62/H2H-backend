@@ -12,16 +12,19 @@ const db = require('../db/dbConfig')
 //   }
 // }
 const createTeam = async (teamInfo) => {
-  const { team_name, team_pic, logo, captain_id } = teamInfo;
-
+  const { team_name, team_pic, logo, captain_id, point_guard_id, power_forward_id, 
+    shooting_guard_id, small_forward_id, center_id } = teamInfo;
+      console.log(teamInfo)
   try {
       const query = `
-          INSERT INTO team(team_name, team_pic, logo, captain_id)
-          VALUES($1, $2, $3, $4)
+          INSERT INTO team(team_name, team_pic, logo, captain_id, point_guard_id,  power_forward_id, 
+            shooting_guard_id, small_forward_id, center_id)
+          VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)
           RETURNING *
       `;
 
-      const newTeam = await db.one(query, [team_name, team_pic, logo, captain_id]);
+      const newTeam = await db.one(query, [team_name, team_pic, logo, captain_id, point_guard_id, power_forward_id, 
+        shooting_guard_id, small_forward_id, center_id]);
 
       return newTeam;
 

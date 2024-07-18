@@ -2,6 +2,7 @@
 const cors = require('cors')
 const express = require('express')
 
+const bballData = require('./db/DPRBasketball.json');
 const authController = require('./controllers/authController')
 const matchController = require('./controllers/matchController')
 const teamController = require('./controllers/teamController');
@@ -19,6 +20,7 @@ app.use((req, _res, next) => {
 
 app.use(express.json())
 
+
 app.use('/api/auth', authController)
 app.use('/api/teams', teamController)
 app.use('/api/matches', matchController)
@@ -27,7 +29,9 @@ app.use('/api/matches', matchController)
 app.get('/', (_req, res) => {
   res.send('Welcome to Firebase Backend Server')
 })
-
+app.get("/api/bball", (req, res) => {
+  res.status(200).json(bballData);
+});
 
 // 404 PAGE
 app.get('*', (_req, res) => {

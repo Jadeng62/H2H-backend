@@ -32,7 +32,7 @@ CREATE TABLE team (
     small_forward_id INT REFERENCES users(id) ON DELETE SET NULL,
     power_forward_id INT REFERENCES users(id) ON DELETE SET NULL,
     center_id INT REFERENCES users(id) ON DELETE SET NULL,
-    captain_id INT REFERENCES users(id) ON DELETE SET NULL,
+    captain_id INT UNIQUE REFERENCES users(id) ON DELETE SET NULL,
     team_wins INTEGER,
     team_loss INTEGER,
     matches_played INTEGER,
@@ -46,8 +46,11 @@ CREATE TABLE team (
 --     FOREIGN KEY (team_id) REFERENCES team(id) ON DELETE CASCADE
 -- );
 
+-- team1_id is automatically assigned to team captain that created the match (only person that can edit it)
+-- extract captain_id from team1_id
 CREATE TABLE matches (
     id SERIAL PRIMARY KEY,
+    creator_id INTEGER REFERENCES team(captain_id) ON DELETE SET NULL,
     team1_id INTEGER REFERENCES team(id) ON DELETE SET NULL,
     team2_id INTEGER REFERENCES team(id) ON DELETE SET NULL,
     address VARCHAR(100),

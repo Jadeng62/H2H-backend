@@ -77,7 +77,7 @@ VALUES
     ('Team D', 'team_d_pic.jpg', 'team_d_logo.jpg', 16, NULL, NULL, NULL, NULL, 16, 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
     ('Team E', 'team_e_pic.jpg', 'team_e_logo.jpg', 17, NULL, NULL, NULL, NULL, 17, 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO matches (team1_id, team2_id, address, state, city, zip, start_datetime, match_completed, match_winner, match_loser)
+INSERT INTO matches (creator_id, team1_id, team2_id, address, state, city, zip, start_datetime, match_completed, match_winner, match_loser)
 VALUES
-    (1, 2, '123 Main St', 'CA', 'Los Angeles', '90001', '2024-07-08 14:00:00', TRUE, 1, 2),
-    (2, 3, '456 Oak Ave', 'NY', 'New York', '10001', '2024-07-09 15:30:00', TRUE, 2, 1);
+    (1, 1, 2, '123 Main St', 'CA', 'Los Angeles', '90001', '2024-07-08 14:00:00', TRUE, 1, 2),
+    (9, 2, 3, '456 Oak Ave', 'NY', 'New York', '10001', '2024-07-09 15:30:00', TRUE, 2, 1);

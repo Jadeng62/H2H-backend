@@ -1,7 +1,7 @@
 const express = require("express");
 const auth = express.Router();
 const authMiddleware = require("../middlewares/authMiddleware");
-const { createNewUser, findUserByUID, deleteUserByID } = require("../queries/users.js");
+const { createNewUser, findUserByUID, deleteUserByID, updateTeamID } = require("../queries/users.js");
 
 auth.post("/register", async (req, res) => {
   const newUser = await createNewUser(req.body);
@@ -39,6 +39,17 @@ auth.delete("user/:id", async (req, res) => {
   const user = await deleteUserByID(id);
 
    return res.status(200) ? res.status(200) : res.status(404); 
+})
+
+auth.put("/user/:id", async(req, res) => {
+  const {id} = req.params;
+  const {team_id} = req.body;
+  const userTeamID = await updateTeamID(id, team_id)
+  if (userTeamID) {
+    res.status(200).json(userTeamID)
+   } else {
+    throw new Error("Fail in put route")
+   }
 })
 
 

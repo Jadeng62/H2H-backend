@@ -84,6 +84,18 @@ const deleteUserByID = async (id) => {
   }
 }
 
+const updateTeamID = async (user_id, team_id) => {
+  try {
+    const query = "UPDATE users SET user_team_id=$1 WHERE id=$2 RETURNING *"
+      const update = await db.one(query, [team_id, user_id])
+
+       return update;
+  } catch (err) {
+    console.error("Error with Delete:", err);
+    throw err;
+  }
+}
+
 
 
 
@@ -93,5 +105,6 @@ module.exports = {
   findUserByUID,
   getUsersByTeamID,
   findUserByID,
-  deleteUserByID
+  deleteUserByID,
+  updateTeamID
 };

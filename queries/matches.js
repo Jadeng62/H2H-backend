@@ -52,26 +52,68 @@ const getAllMatchesByPlayerID = async (playerID) => {
 }
 
 const createMatch = async (matchInfo) => {
-  const {team1_id, team2_id, address, state, city, zip, start_datetime, match_completed, match_winner, match_loser } = matchInfo;
- try {
-   const query = `INSERT INTO matches (team1_id, team2_id, address, state, city, zip, start_datetime, match_completed, match_winner, match_loser) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING * `;
-    const newMatch = await db.one(query, [team1_id, team2_id, address, state, city, zip, start_datetime, match_completed, match_winner, match_loser]);
-      return newMatch;
- } catch (err) {
-   throw new Error(err);
- };
+  const { creator_id, team1_id, team2_id, address, state, city, zip, start_datetime, match_completed, match_winner, match_loser } = matchInfo;
+
+  try {
+    const query = `
+      INSERT INTO matches (creator_id, team1_id, team2_id, address, state, city, zip, start_datetime, match_completed, match_winner, match_loser)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+      RETURNING *
+    `;
+
+    const newMatch = await db.one(query, [
+      creator_id,
+      team1_id,
+      team2_id,
+      address,
+      state,
+      city,
+      zip,
+      start_datetime,
+      match_completed,
+      match_winner,
+      match_loser
+    ]);
+
+    return newMatch;
+  } catch (error) {
+    throw error;
+  }
 };
 
-const editMatch = async (matchInfo, id) =>{
-  const {team1_id, team2_id, address, state, city, zip, start_datetime, match_completed, match_winner, match_loser } = matchInfo 
+
+const editMatch = async (matchInfo, id) => {
+  const { creator_id, team1_id, team2_id, address, state, city, zip, start_datetime, match_completed, match_winner, match_loser } = matchInfo;
+  
   try {
-    const query = 'UPDATE matches SET team1_id=$1, team2_id=$2, address=$3, state=$4, city=$5, zip=$6, start_datetime=$7, match_completed=$8, match_winner=$9, match_loser=$10 WHERE id=$11 RETURNING *'
-    const updatedMatch = await db.one(query, [team1_id, team2_id, address, state, city, zip, start_datetime, match_completed, match_winner, match_loser, id ])
-    return updatedMatch
+    const query = `
+      UPDATE matches 
+      SET creator_id=$1, team1_id=$2, team2_id=$3, address=$4, state=$5, city=$6, zip=$7, start_datetime=$8, match_completed=$9, match_winner=$10, match_loser=$11 
+      WHERE id=$12 
+      RETURNING *
+    `;
+
+    const updatedMatch = await db.one(query, [
+      creator_id,
+      team1_id,
+      team2_id,
+      address,
+      state,
+      city,
+      zip,
+      start_datetime,
+      match_completed,
+      match_winner,
+      match_loser,
+      id
+    ]);
+
+    return updatedMatch;
   } catch (error) {
-    throw error
+    throw error;
   }
-}
+};
+
 
 
 const deleteMatch = async (id) => {

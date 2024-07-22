@@ -1,7 +1,13 @@
 const express = require("express");
 const auth = express.Router();
 const authMiddleware = require("../middlewares/authMiddleware");
-const { createNewUser, findUserByUID, deleteUserByID, updateTeamID } = require("../queries/users.js");
+const {
+  createNewUser,
+  findUserByUID,
+  deleteUserByID,
+  updateTeamID,
+  findUserByID,
+} = require("../queries/users.js");
 
 auth.post("/register", async (req, res) => {
   const newUser = await createNewUser(req.body);
@@ -23,7 +29,6 @@ auth.get("/user/:uid", authMiddleware, async (req, res) => {
   }
 });
 
-
 auth.get("/user/single/:id", async (req, res) => {
   const { id } = req.params;
   const user = await findUserByID(id);
@@ -38,20 +43,26 @@ auth.delete("user/:id", async (req, res) => {
   const { id, uid } = req.params;
   const user = await deleteUserByID(id);
 
-   return res.status(200) ? res.status(200) : res.status(404); 
-})
+  return res.status(200) ? res.status(200) : res.status(404);
+});
 
-auth.put("/user/:id", async(req, res) => {
-  const {id} = req.params;
-  const {team_id} = req.body;
-  const userTeamID = await updateTeamID(id, team_id)
-  if (userTeamID) {
-    res.status(200).json(userTeamID)
-   } else {
-    throw new Error("Fail in put route")
-   }
-})
+auth.put("/user/:id", async (req, res) => {
+  const { id } = req.params;
+  const { user_team_id } = req.body;
 
+  console.log("Received user_team_id:", user_team_id);
 
-module.exports = auth
+  try {
+    const userTeamID = await updateTeamID(id, user_team_id);
+    if (userTeamID) {
+      res.status(200).json(userTeamID);
+    } else {
+      res.status(400).json({ message: "Failed to update user_team_id" });
+    }
+  } catch (error) {
+    console.error("Error in PUT /user/:id route:", error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+});
 
+module.exports = auth;

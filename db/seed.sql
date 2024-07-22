@@ -79,5 +79,5 @@ VALUES
 
 INSERT INTO matches (creator_id, team1_id, team2_id, park_name, address, borough, start_datetime, match_completed, match_winner, match_loser)
 VALUES 
-    (1, 1, 2,'Captain William Harry Thompson Playground', 'E 174 St. & Bronx River Ave.', 'Bronx', '2024-07-08 14:00:00', TRUE, 1, 2),
-    (9, 2, 3,'52 Playground', 'Kelly St. & Ave. St. John', 'Bronx', '2024-07-09 15:30:00', TRUE, 2, 3);
+    (1, 1, 2,'Captain William Harry Thompson Playground', 'E 174 St. & Bronx River Ave.', 'Bronx', '2024-07-08 14:00:00', FALSE, NULL, NULL),
+    (9, 2, 3,'52 Playground', 'Kelly St. & Ave. St. John', 'Bronx', '2024-07-09 15:30:00', FALSE, NULL, NULL);

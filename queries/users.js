@@ -1,16 +1,8 @@
 const db = require("../db/dbConfig");
 
 const createNewUser = async (user) => {
-  const {
-    uid,
-    email,
-    username,
-    first_name,
-    last_name,
-    photo,
-    dob,
-    position,
-  } = user;
+  const { uid, email, username, first_name, last_name, photo, dob, position } =
+    user;
 
   try {
     const newUser = await db.one(
@@ -74,31 +66,33 @@ const findUserByID = async (id) => {
 
 const deleteUserByID = async (id) => {
   try {
-    const query = "DELETE * FROM users WHERE id = $1"
-     const user = await db.one(query, [id])
+    const query = "DELETE * FROM users WHERE id = $1";
+    const user = await db.one(query, [id]);
 
-      return user
+    return user;
   } catch (err) {
     console.error("Error with Delete:", err);
     throw err;
   }
-}
+};
 
-const updateTeamID = async (user_id, team_id) => {
+const updateTeamID = async (user_id, user_team_id) => {
   try {
-    const query = "UPDATE users SET user_team_id=$1 WHERE id=$2 RETURNING *"
-      const update = await db.one(query, [team_id, user_id])
+    const query = "UPDATE users SET user_team_id=$1 WHERE id=$2 RETURNING *";
+    console.log("Executing query:", query, "with values:", [
+      user_team_id,
+      user_id,
+    ]);
 
-       return update;
+    const update = await db.one(query, [user_team_id, user_id]);
+    console.log("Query result:", update);
+
+    return update;
   } catch (err) {
-    console.error("Error with Delete:", err);
+    console.error("Error with updateTeamID:", err);
     throw err;
   }
-}
-
-
-
-
+};
 
 module.exports = {
   createNewUser,
@@ -106,5 +100,5 @@ module.exports = {
   getUsersByTeamID,
   findUserByID,
   deleteUserByID,
-  updateTeamID
+  updateTeamID,
 };

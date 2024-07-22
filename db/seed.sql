@@ -64,9 +64,9 @@ VALUES
 
     ('3lHMYdPmI5ejx41vf4A3zASoz0g2', 5, 'point guard', 'matthewdoe@mail.com', 'user17', 'Matthew', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815665/H2H/karabo-mdluli-nRwJaWg7McU-unsplash_hcuaid.jpg', '1993-12-05', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
     
-    ('LUrxqd3Ov9TuYPVWOHcx6ysaEOg1', NULL, NULL, 'adeledoe@mail.com', 'user18', 'Adele', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815673/H2H/omid-armin-g9dpfgrSyR8-unsplash_ng4vc0.jpg', '1988-09-22', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('9YGrpeiOfpTW3vHwEblaxHoor3n2', NULL, NULL, 'britneydoe@mail.com', 'user19', 'Britney', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815684/H2H/prince-akachi-J1OScm_uHUQ-unsplash_kocdrs.jpg', '1990-11-08', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('Qh1UJsv9pfUOhAEkcmIHbvww3ly1', NULL, NULL, 'leodoe@mail.com', 'user20', 'Leo', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815691/H2H/rodney-gainous-jr-p_VF71muhRs-unsplash_eppcl1.jpg', '1987-07-15', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+    ('LUrxqd3Ov9TuYPVWOHcx6ysaEOg1', NULL, 'point guard', 'adeledoe@mail.com', 'user18', 'Adele', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815673/H2H/omid-armin-g9dpfgrSyR8-unsplash_ng4vc0.jpg', '1988-09-22', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('9YGrpeiOfpTW3vHwEblaxHoor3n2', NULL, 'point guard', 'britneydoe@mail.com', 'user19', 'Britney', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815684/H2H/prince-akachi-J1OScm_uHUQ-unsplash_kocdrs.jpg', '1990-11-08', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Qh1UJsv9pfUOhAEkcmIHbvww3ly1', NULL, 'point guard', 'leodoe@mail.com', 'user20', 'Leo', 'Doe', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1720815691/H2H/rodney-gainous-jr-p_VF71muhRs-unsplash_eppcl1.jpg', '1987-07-15', 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 
 INSERT INTO team (team_name, team_pic, logo, point_guard_id, shooting_guard_id, small_forward_id, power_forward_id, center_id, captain_id, team_wins, team_loss, matches_played, created_at, updated_at)

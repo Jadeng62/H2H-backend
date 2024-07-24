@@ -1,37 +1,35 @@
-const db = require('../db/dbConfig')
+const db = require("../db/dbConfig");
 
 const getAllMatches = async () => {
-    try {
-      const allMatches = await db.any(
-        'SELECT * FROM matches'
-      )
-      return allMatches
-    } catch (error) {
-      return error
-    }
-}
-
-const getMatchByMatchID = async (matchID) =>{
   try {
-    const query = 'SELECT * FROM matches WHERE id=$1'
-    const oneMatch =  await db.one(query,matchID)
-    return oneMatch
+    const allMatches = await db.any("SELECT * FROM matches");
+    return allMatches;
   } catch (error) {
-    throw error
+    return error;
   }
-}
+};
+
+const getMatchByMatchID = async (matchID) => {
+  try {
+    const query = "SELECT * FROM matches WHERE id=$1";
+    const oneMatch = await db.one(query, matchID);
+    return oneMatch;
+  } catch (error) {
+    throw error;
+  }
+};
 
 const getAllMatchesByTeamID = async (teamID) => {
   try {
     const allMatches = await db.any(
-      'SELECT * FROM matches WHERE team1_id=$1 OR team2_id=$1',
+      "SELECT * FROM matches WHERE team1_id=$1 OR team2_id=$1",
       [teamID]
-    )
-    return allMatches
+    );
+    return allMatches;
   } catch (error) {
-    return error
+    return error;
   }
-}
+};
 
 const getAllMatchesByPlayerID = async (playerID) => {
   try {
@@ -43,21 +41,34 @@ const getAllMatchesByPlayerID = async (playerID) => {
         OR t.small_forward_id = $1
         OR t.power_forward_id = $1
         OR t.center_id = $1;
-    `
-    const allMatches = await db.any(query, [playerID])
-    return allMatches
+    `;
+    const allMatches = await db.any(query, [playerID]);
+    return allMatches;
   } catch (error) {
-    throw error
+    throw error;
   }
-}
+};
 
 const createMatch = async (matchInfo) => {
-  const { creator_id, team1_id, team2_id, address, state, city, zip, start_datetime, match_completed, match_winner, match_loser } = matchInfo;
+  const {
+    creator_id,
+    team1_id,
+    team2_id,
+    park_name,
+    address,
+    borough,
+    start_datetime,
+    match_completed,
+    match_winner,
+    match_loser,
+  } = matchInfo;
+
+  console.log(matchInfo);
 
   try {
     const query = `
-      INSERT INTO matches (creator_id, team1_id, team2_id, address, state, city, zip, start_datetime, match_completed, match_winner, match_loser)
-      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+      INSERT INTO matches (creator_id, team1_id, team2_id, park_name, address, borough,start_datetime, match_completed, match_winner, match_loser)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
       RETURNING *
     `;
 
@@ -65,14 +76,13 @@ const createMatch = async (matchInfo) => {
       creator_id,
       team1_id,
       team2_id,
+      park_name,
       address,
-      state,
-      city,
-      zip,
+      borough,
       start_datetime,
       match_completed,
       match_winner,
-      match_loser
+      match_loser,
     ]);
 
     return newMatch;
@@ -81,10 +91,21 @@ const createMatch = async (matchInfo) => {
   }
 };
 
-
 const editMatch = async (matchInfo, id) => {
-  const { creator_id, team1_id, team2_id, address, state, city, zip, start_datetime, match_completed, match_winner, match_loser } = matchInfo;
-  
+  const {
+    creator_id,
+    team1_id,
+    team2_id,
+    address,
+    state,
+    city,
+    zip,
+    start_datetime,
+    match_completed,
+    match_winner,
+    match_loser,
+  } = matchInfo;
+
   try {
     const query = `
       UPDATE matches 
@@ -105,7 +126,7 @@ const editMatch = async (matchInfo, id) => {
       match_completed,
       match_winner,
       match_loser,
-      id
+      id,
     ]);
 
     return updatedMatch;
@@ -114,20 +135,18 @@ const editMatch = async (matchInfo, id) => {
   }
 };
 
-
-
 const deleteMatch = async (id) => {
-   try {
-  const deletedMatch = await db.one("DELETE FROM matches WHERE id=$1 RETURNING *", id )
+  try {
+    const deletedMatch = await db.one(
+      "DELETE FROM matches WHERE id=$1 RETURNING *",
+      id
+    );
 
-   return deletedMatch
-   } catch (err) {
-    throw err
-   }
-}
-
-
-
+    return deletedMatch;
+  } catch (err) {
+    throw err;
+  }
+};
 
 module.exports = {
   getAllMatches,
@@ -136,5 +155,5 @@ module.exports = {
   getAllMatchesByPlayerID,
   createMatch,
   editMatch,
-  deleteMatch
-}
+  deleteMatch,
+};

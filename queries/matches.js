@@ -96,10 +96,9 @@ const editMatch = async (matchInfo, id) => {
     creator_id,
     team1_id,
     team2_id,
+    park_name,
     address,
-    state,
-    city,
-    zip,
+    borough,
     start_datetime,
     match_completed,
     match_winner,
@@ -109,8 +108,8 @@ const editMatch = async (matchInfo, id) => {
   try {
     const query = `
       UPDATE matches 
-      SET creator_id=$1, team1_id=$2, team2_id=$3, address=$4, state=$5, city=$6, zip=$7, start_datetime=$8, match_completed=$9, match_winner=$10, match_loser=$11 
-      WHERE id=$12 
+      SET creator_id=$1, team1_id=$2, team2_id=$3, park_name=$4, address=$5, borough=$6, start_datetime=$7, match_completed=$8, match_winner=$9, match_loser=$10
+      WHERE id=$11
       RETURNING *
     `;
 
@@ -118,10 +117,9 @@ const editMatch = async (matchInfo, id) => {
       creator_id,
       team1_id,
       team2_id,
+      park_name,
       address,
-      state,
-      city,
-      zip,
+      borough,
       start_datetime,
       match_completed,
       match_winner,

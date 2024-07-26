@@ -67,15 +67,14 @@ const createMatch = async (matchInfo) => {
 
   try {
     const query = `
-      INSERT INTO matches (creator_id, team1_id, team2_id, park_name, address, borough,start_datetime, match_completed, match_winner, match_loser)
-      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
+      INSERT INTO matches (creator_id, team1_id, park_name, address, borough,start_datetime, match_completed, match_winner, match_loser)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
       RETURNING *
     `;
 
     const newMatch = await db.one(query, [
       creator_id,
       team1_id,
-      team2_id,
       park_name,
       address,
       borough,

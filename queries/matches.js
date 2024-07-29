@@ -5,7 +5,7 @@ const getAllMatches = async () => {
     const allMatches = await db.any("SELECT * FROM matches");
     return allMatches;
   } catch (error) {
-    return error;
+    throw new Error(`Failed to retrieve all matches: ${error.message}`);
   }
 };
 
@@ -15,7 +15,7 @@ const getMatchByMatchID = async (matchID) => {
     const oneMatch = await db.one(query, matchID);
     return oneMatch;
   } catch (error) {
-    throw error;
+    throw new Error(`Failed to retrieve match with ID ${matchID}: ${error.message}`);
   }
 };
 
@@ -27,7 +27,7 @@ const getAllMatchesByTeamID = async (teamID) => {
     );
     return allMatches;
   } catch (error) {
-    return error;
+    throw new Error(`Failed to retrieve matches for team ID ${teamID}: ${error.message}`);
   }
 };
 
@@ -45,7 +45,7 @@ const getAllMatchesByPlayerID = async (playerID) => {
     const allMatches = await db.any(query, [playerID]);
     return allMatches;
   } catch (error) {
-    throw error;
+    throw new Error(`Failed to retrieve matches for player ID ${playerID}: ${error.message}`);
   }
 };
 
@@ -63,11 +63,9 @@ const createMatch = async (matchInfo) => {
     match_loser,
   } = matchInfo;
 
-  console.log(matchInfo);
-
   try {
     const query = `
-      INSERT INTO matches (creator_id, team1_id, park_name, address, borough,start_datetime, match_completed, match_winner, match_loser)
+      INSERT INTO matches (creator_id, team1_id, park_name, address, borough, start_datetime, match_completed, match_winner, match_loser)
       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
       RETURNING *
     `;
@@ -86,7 +84,7 @@ const createMatch = async (matchInfo) => {
 
     return newMatch;
   } catch (error) {
-    throw error;
+    throw new Error(`Failed to create match: ${error.message}`);
   }
 };
 
@@ -128,7 +126,7 @@ const editMatch = async (matchInfo, id) => {
 
     return updatedMatch;
   } catch (error) {
-    throw error;
+    throw new Error(`Failed to update match with ID ${id}: ${error.message}`);
   }
 };
 
@@ -140,8 +138,8 @@ const deleteMatch = async (id) => {
     );
 
     return deletedMatch;
-  } catch (err) {
-    throw err;
+  } catch (error) {
+    throw new Error(`Failed to delete match with ID ${id}: ${error.message}`);
   }
 };
 

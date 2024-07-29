@@ -40,6 +40,20 @@ CREATE TABLE team (
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE badges (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    icon_url TEXT,
+);
+
+CREATE TABLE team_badges (
+    team_id INT REFERENCES team(id) ON DELETE CASCADE,
+    badge_id INT REFERENCES badges(id) ON DELETE CASCADE,
+    earned_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (team_id, badge_id)
+);
+
 -- CREATE TABLE team_captains (
 --     team_id SERIAL PRIMARY KEY,
 --     captain_id INT REFERENCES users(id) ON DELETE CASCADE,

@@ -7,7 +7,7 @@ const addBadgeToTeam = async (team_id, badge_id) => {
     const newBadge = await db.one(query, [team_id, badge_id]);
     return newBadge;
   } catch (error) {
-    throw new Error(error.mssage || error);
+    throw new Error(error.message || error);
   }
 };
 

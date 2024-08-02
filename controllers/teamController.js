@@ -14,7 +14,7 @@ team.post("/", async (req, res) => {
     const newTeam = await createTeam(req.body);
     res.status(200).json(newTeam);
   } catch (error) {
-    console.error("Error fetching teams:", error);
+    console.error("Error creating teams:", error);
     res.status(500).json({ error: "Internal server error" });
   }
 });

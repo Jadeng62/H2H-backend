@@ -71,11 +71,11 @@ VALUES
 
 INSERT INTO team (team_name, team_pic, logo, point_guard_id, shooting_guard_id, small_forward_id, power_forward_id, center_id, captain_id, team_wins, team_loss, matches_played, created_at, updated_at)
 VALUES
-    ('Team A', 'team_a_pic.jpg', 'team_a_logo.jpg', 1, 2, 3, 4, 5, 1, 2, 1, 3, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('Team B', 'team_b_pic.jpg', 'team_b_logo.jpg', 6, 7, 8, 9, 10, 8, 1, 2, 3, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('Team C', 'team_c_pic.jpg', 'team_c_logo.jpg', 11, 12, 13, 14, 15, 11, 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('Team D', 'team_d_pic.jpg', 'team_d_logo.jpg', 16, NULL, NULL, NULL, NULL, 16, 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('Team E', 'team_e_pic.jpg', 'team_e_logo.jpg', 17, NULL, NULL, NULL, NULL, 17, 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+    ('Team A', NULL, 'team_a_logo.jpg', 1, 2, 3, 4, 5, 1, 2, 1, 3, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Team B', NULL, 'team_b_logo.jpg', 6, 7, 8, 9, 10, 8, 1, 2, 3, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Team C', NULL, 'team_c_logo.jpg', 11, 12, 13, 14, 15, 11, 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Team D', NULL, 'team_d_logo.jpg', 16, NULL, NULL, NULL, NULL, 16, 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Team E', NULL, 'team_e_logo.jpg', 17, NULL, NULL, NULL, NULL, 17, 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 INSERT INTO matches (creator_id, team1_id, team2_id, park_name, address, borough, start_datetime, match_completed, match_winner, match_loser)
 VALUES 

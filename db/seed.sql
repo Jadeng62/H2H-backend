@@ -71,11 +71,11 @@ VALUES
 
 INSERT INTO team (team_name, team_pic, logo, point_guard_id, shooting_guard_id, small_forward_id, power_forward_id, center_id, captain_id, team_wins, team_loss, matches_played, created_at, updated_at)
 VALUES
-    ('Team A', NULL, 'team_a_logo.jpg', 1, 2, 3, 4, 5, 1, 2, 1, 3, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('Team B', NULL, 'team_b_logo.jpg', 6, 7, 8, 9, 10, 8, 1, 2, 3, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('Team C', NULL, 'team_c_logo.jpg', 11, 12, 13, 14, 15, 11, 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('Team D', NULL, 'team_d_logo.jpg', 16, NULL, NULL, NULL, NULL, 16, 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('Team E', NULL, 'team_e_logo.jpg', 17, NULL, NULL, NULL, NULL, 17, 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+    ('D.U.M.B.O Sharks', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1722621250/H2H/h2h-logos/original-5a8bd908e3923c251c8d2ac639fec579_zlu7z0.png', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1722621250/H2H/h2h-logos/original-5a8bd908e3923c251c8d2ac639fec579_zlu7z0.png', 1, 2, 3, 4, 5, 1, 2, 1, 3, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('BedStuy Cobras', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1722621424/H2H/h2h-logos/original-9ffb523646daab00fd8e1dc82246178c_qbuwig.jpg', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1722621424/H2H/h2h-logos/original-9ffb523646daab00fd8e1dc82246178c_qbuwig.jpg', 6, 7, 8, 9, 10, 8, 1, 2, 3, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Morningside Hawks', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1722621880/H2H/h2h-logos/image_processing20191007-12833-1m40z0e_ellabc.jpg', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1722621880/H2H/h2h-logos/image_processing20191007-12833-1m40z0e_ellabc.jpg', 11, 12, 13, 14, 15, 11, 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('BK Doge', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1722625201/H2H/h2h-logos/original-3c536de6ff903882f487a41378d4397a_rydypm.jpg', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1722625201/H2H/h2h-logos/original-3c536de6ff903882f487a41378d4397a_rydypm.jpg', 16, NULL, NULL, NULL, NULL, 16, 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Sugar Hill Lions', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1722623541/H2H/h2h-logos/original-bf8aa182e7fd9980c4f61f29d025ef37_cgezgy.jpg', 'https://res.cloudinary.com/dwygxzqku/image/upload/v1722623541/H2H/h2h-logos/original-bf8aa182e7fd9980c4f61f29d025ef37_cgezgy.jpg', 17, NULL, NULL, NULL, NULL, 17, 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 INSERT INTO matches (creator_id, team1_id, team2_id, park_name, address, borough, start_datetime, match_completed, match_winner, match_loser)
 VALUES 

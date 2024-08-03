@@ -7,7 +7,7 @@ CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     uid VARCHAR(255) UNIQUE NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
-    username VARCHAR(100),
+    username VARCHAR(100) UNIQUE NOT NULL,
     user_team_id INT DEFAULT NULL,
     first_name VARCHAR(100),
     last_name VARCHAR(100),

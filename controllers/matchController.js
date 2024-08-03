@@ -2,6 +2,10 @@ const express = require('express')
 const match = express.Router()
 const { getAllMatches, getAllMatchesByTeamID, getMatchByMatchID, getAllMatchesByPlayerID, createMatch, editMatch, deleteMatch } = require('../queries/matches')
 
+const resultsController = require("./resultController")
+
+match.use("/:match_id/results", resultsController)
+
 match.get('/', async (req,res) => {
     const {team_id, player_id} = req.query
     // Route to get all matches for a specific team

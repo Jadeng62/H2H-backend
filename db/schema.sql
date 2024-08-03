@@ -74,3 +74,13 @@ CREATE TABLE matches (
     match_winner INTEGER DEFAULT NULL,
     match_loser INTEGER DEFAULT NULL
 );
+
+-- Add the results table
+CREATE TABLE results (
+    id SERIAL PRIMARY KEY,
+    match_id INTEGER REFERENCES matches(id) ON DELETE CASCADE,
+    team_1_submitted_winner INTEGER REFERENCES team(id),
+    team_2_submitted_winner INTEGER REFERENCES team(id),
+    MVP INTEGER REFERENCES users(id)
+);
+

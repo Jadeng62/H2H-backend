@@ -10,6 +10,7 @@ const {
 } = require("../queries/users.js");
 
 auth.post("/register", async (req, res) => {
+  console.log('attempting to create user: ',req.body)
   const newUser = await createNewUser(req.body);
 
   if (newUser) {

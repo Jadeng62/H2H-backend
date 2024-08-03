@@ -9,7 +9,7 @@ results.get('/', async (req,res) =>{
     try {
         const returnedResult = await getMatchResult(match_id);
         const returnedMatch = await getMatchByMatchID(match_id);
-        if(returnedResult && returnedResult){
+        if(returnedResult && returnedMatch){
             const returnedMatchWithResult = {
                 Match: returnedMatch,
                 Result: returnedResult

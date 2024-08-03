@@ -23,7 +23,7 @@ CREATE TABLE users (
 
 CREATE TABLE team (
     id SERIAL PRIMARY KEY,
-    team_name VARCHAR(100),
+    team_name VARCHAR(100) UNIQUE,
     team_pic VARCHAR(255),
     logo VARCHAR(255),
     point_guard_id INT REFERENCES users(id) ON DELETE SET NULL,

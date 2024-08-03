@@ -8,6 +8,7 @@ const matchController = require("./controllers/matchController");
 const teamController = require("./controllers/teamController");
 const bballController = require("./controllers/bballController");
 const badgesController = require("./controllers/badgesController");
+const resultsController = require("./controllers/resultController")
 // CONFIGURATION
 const app = express();
 
@@ -26,6 +27,7 @@ app.use("/api/teams", teamController);
 app.use("/api/matches", matchController);
 app.use("/api/bball", bballController);
 app.use("/api/badges", badgesController);
+app.use("/api/results", resultsController)
 
 // ROUTES
 app.get("/", (_req, res) => {

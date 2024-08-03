@@ -8,6 +8,7 @@ const createNewUser = async (user) => {
       "INSERT INTO users (uid, email, username, first_name, last_name, photo, dob, position) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *",
       [uid, email, username, first_name, last_name, photo, dob, position]
     );
+    console.log(newUser)
     return newUser;
   } catch (error) {
     if (error.message.includes('duplicate key value violates unique constraint')) {

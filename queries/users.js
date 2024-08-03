@@ -10,9 +10,13 @@ const createNewUser = async (user) => {
     );
     return newUser;
   } catch (error) {
+    if (error.message.includes('duplicate key value violates unique constraint')) {
+      throw new Error(`Username or UID already exists: ${error.message}`);
+    }
     throw new Error(`Failed to create user with UID ${uid}: ${error.message}`);
   }
 };
+
 
 const findUserByUID = async (uid) => {
   try {

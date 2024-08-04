@@ -38,6 +38,8 @@ team.put("/:id", async (req, res) => {
   try {
     const updatedTeam = await updateTeam(req.body, id);
     if (updatedTeam) {
+      const teamId = id;
+      await checkAndAddBadgeToTeam(teamId, 2); // check if team unlocked badge
       res.status(200).json(updatedTeam);
     } else {
       res

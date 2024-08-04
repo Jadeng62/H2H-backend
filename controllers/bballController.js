@@ -15,15 +15,6 @@ bball.get("/", (req, res) => {
   }
 });
 
-// bball.get('/:id', (req, res) => {
-//   const { id } = req.params;
-//   const court = bballData[id]; // Use index as ID
-//   if (!court) {
-//     return res.status(404).json({ error: 'Court not found' });
-//   }
-//   res.json({ ...court, id });
-// });
-
 // First character of prop_id lets us know which borough the bball court is in
 /* Boroughs:
 X - Bronx

@@ -83,23 +83,23 @@ VALUES
     (8, 2, 3,'52 Playground', 'Kelly St. & Ave. St. John', 'Bronx', '2024-08-09 15:30:00', FALSE, NULL, NULL);
 
 
-INSERT INTO badges (name, description, icon_url) VALUES 
-('All the World''s a Stage', 'Awarded when a player first creates their team to compete in the Head 2 Head arena.','https://res.cloudinary.com/dvmczcg3f/image/upload/b_rgb:FFFFFF/c_crop,ar_1:1/v1722482975/Head%202%20Head/globe_ktiqgs.jpg'),
-('All Hands on Deck', 'Unlocked when a team has a full roster.', 'https://res.cloudinary.com/dvmczcg3f/image/upload/c_crop,ar_1:1/v1722485530/Head%202%20Head/full_team_pic_z8f1ih.jpg'),
-('Get Out of My Swamp!', 'Unlocked when a team has 3 consecutive wins at the same court.', 'https://res.cloudinary.com/dvmczcg3f/image/upload/c_crop,ar_1:1/v1722484078/Head%202%20Head/shrek_keep_out_sign_bplxek.jpg'),
-('Hope...', 'Given to the team that breaks a losing streak of 5 games.', 'https://res.cloudinary.com/dvmczcg3f/image/upload/v1722484987/Head%202%20Head/light_in_well_mouoxj.jpg'),
-('By the Gods!', 'Awarded when a team wins a game by 3 points or less.', 'https://res.cloudinary.com/dvmczcg3f/image/upload/v1722487180/Head%202%20Head/prayer_hand_candle_rmkpet.jpg'),
-('Sleeping Beauty', 'Awarded to a team that hasn''t signed up for a game for a week or more.', 'https://res.cloudinary.com/dvmczcg3f/image/upload/c_crop,ar_1:1/v1722488132/Head%202%20Head/beatup_basketball_cqxijn.jpg'),
-('The Vicious Cycle', 'Unlocked when a team''s number of wins and losses are equal (1:1 ratio).', 'https://res.cloudinary.com/dvmczcg3f/image/upload/c_crop,ar_1:1/v1722489375/Head%202%20Head/Screenshot_2024-08-01_at_1.16.07_AM_ovoidt.png');
+INSERT INTO badges (name, description, icon_url, criteria) VALUES 
+('All the World''s a Stage', 'Awarded when a player first creates their team to compete in the Head 2 Head arena.','https://res.cloudinary.com/dvmczcg3f/image/upload/b_rgb:FFFFFF/c_crop,ar_1:1/v1722482975/Head%202%20Head/globe_ktiqgs.jpg', '{"type": "team_creation", "value": true}'),
+('All Hands on Deck', 'Unlocked when a team has a full roster.', 'https://res.cloudinary.com/dvmczcg3f/image/upload/c_crop,ar_1:1/v1722485530/Head%202%20Head/full_team_pic_z8f1ih.jpg', '{"type": "full_roster", "value": 5}'),
+('Get Out of My Swamp!', 'Unlocked when a team has 3 consecutive wins at the same court.', 'https://res.cloudinary.com/dvmczcg3f/image/upload/c_crop,ar_1:1/v1722484078/Head%202%20Head/shrek_keep_out_sign_bplxek.jpg', '{"type": "consecutive_wins", "value": 3}'),
+('Hope...', 'Given to the team that breaks a losing streak of 5 games.', 'https://res.cloudinary.com/dvmczcg3f/image/upload/v1722484987/Head%202%20Head/light_in_well_mouoxj.jpg', '{"type": "losing_streak_break", "value": 5}'),
+('By the Gods!', 'Awarded when a team wins a game by 3 points or less.', 'https://res.cloudinary.com/dvmczcg3f/image/upload/v1722487180/Head%202%20Head/prayer_hand_candle_rmkpet.jpg', '{"type": "close_win", "value": 3}'),
+('Sleeping Beauty', 'Awarded to a team that hasn''t signed up for a game for a week or more.', 'https://res.cloudinary.com/dvmczcg3f/image/upload/c_crop,ar_1:1/v1722488132/Head%202%20Head/beatup_basketball_cqxijn.jpg', '{"type": "inactive", "value": 7}'),
+('The Vicious Cycle', 'Unlocked when a team''s number of wins and losses are equal (1:1 ratio).', 'https://res.cloudinary.com/dvmczcg3f/image/upload/c_crop,ar_1:1/v1722489375/Head%202%20Head/Screenshot_2024-08-01_at_1.16.07_AM_ovoidt.png', '{"type": "win_loss_ratio", "value": 1}');
 
 
 -- Insert Champion Badge
-INSERT INTO badges (name, description, icon_url) VALUES 
-('The Crown', 'Awarded to the team with the most wins in the season.', 'https://res.cloudinary.com/dvmczcg3f/image/upload/c_crop,ar_1:1/v1722490358/Head%202%20Head/Screenshot_2024-08-01_at_1.29.31_AM_qr5xuy.png');
+INSERT INTO badges (name, description, icon_url, criteria) VALUES 
+('The Crown', 'Awarded to the team with the most wins in the season.', 'https://res.cloudinary.com/dvmczcg3f/image/upload/c_crop,ar_1:1/v1722490358/Head%202%20Head/Screenshot_2024-08-01_at_1.29.31_AM_qr5xuy.png', '{"type": "most_wins", "value": "season"}');
 
 -- Insert High Scorer Badge
-INSERT INTO badges (name, description, icon_url) VALUES 
-('High Scorer', 'Given to the team with the highest average points per game in the season.', 'https://res.cloudinary.com/dvmczcg3f/image/upload/c_crop,ar_1:1/v1721078532/Head%202%20Head/baketball_emblem_jeapt4.jpg');
+INSERT INTO badges (name, description, icon_url, criteria) VALUES 
+('High Scorer', 'Given to the team with the highest average points per game in the season.', 'https://res.cloudinary.com/dvmczcg3f/image/upload/c_crop,ar_1:1/v1721078532/Head%202%20Head/baketball_emblem_jeapt4.jpg', '{"type": "highest_average_points", "value": "season"}');
 
 
 -- Add badges for Team 1

@@ -1,12 +1,9 @@
-const {
-  getTeamById,
-  getMatchesByTeamId,
-  getAllTeams,
-} = require("../queries/teams");
-
-const { getBadgeById, addBadgeToTeam } = require("../queries/badges");
-
 // This file handles business logic for badge evaluation
+
+// import queries we need to update db
+const { getTeamByTeamId, getAllTeams } = require("../queries/team.js");
+const { getAllMatchesByTeamID } = require("../queries/matches.js");
+const { getBadgeById, addBadgeToTeam } = require("../queries/badges.js");
 
 // Evaluation functions for different badge criteria
 const evaluateTeamCreationBadge = (team) => {
@@ -99,10 +96,11 @@ const evaluateHighScorerBadge = (teams) => {
   );
 };
 
+// badge evaluator
 const evaluateBadgeCriteria = async (badgeId, teamId) => {
   const badge = await getBadgeById(badgeId);
-  const team = await getTeamById(teamId);
-  const matches = await getMatchesByTeamId(teamId);
+  const team = await getTeamByTeamId(teamId);
+  const matches = await getAllMatchesByTeamID(teamId);
 
   switch (badge.criteria.type) {
     case "team_creation":

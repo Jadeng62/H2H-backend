@@ -1,4 +1,4 @@
-<h1 align="center">Head 2 Head</h1>
+<h1 align="center">Head 2 Head - Server Side</h1>
 <p align="center">
   <img src="https://res.cloudinary.com/dwygxzqku/image/upload/v1722631715/H2H/h2h-logos/H2H-Logo_jnhf5q.png" 
     alt="H2H Logo" 
@@ -174,31 +174,12 @@ The server exposes the following API endpoints:
 
 Here's a list of the main dependencies used in this project:
 
-- **@splinetool/react-spline**: `^4.0.0` - React components for using Spline.
-- **@splinetool/runtime**: `^1.8.9` - Runtime for Spline.
-- **chart.js**: `^4.4.3` - JavaScript library for creating charts.
-- **firebase**: `^10.12.3` - Firebase JavaScript SDK for client-side operations.
-- **lucide-react**: `^0.407.0` - Lucide icons for React.
-- **react**: `^18.2.0` - React library for building user interfaces.
-- **react-chartjs-2**: `^5.2.0` - React wrapper for Chart.js.
-- **react-dom**: `^18.2.0` - React package for DOM rendering.
-- **react-modal**: `^3.16.1` - Accessible modal component for React.
-- **react-router-dom**: `^6.3.0` - Declarative routing for React.
-- **react-toastify**: `^10.0.5` - Notification library for React.
-
-### DevDependencies
-
-- **@types/react**: `^18.2.37` - TypeScript definitions for React.
-- **@types/react-dom**: `^18.2.15` - TypeScript definitions for React DOM.
-- **@vitejs/plugin-react**: `^4.2.0` - Vite plugin for React support.
-- **autoprefixer**: `^10.4.19` - PostCSS plugin to parse CSS and add vendor prefixes.
-- **eslint**: `^8.53.0` - JavaScript linter for identifying and reporting on patterns.
-- **eslint-plugin-react**: `^7.33.2` - Linter plugin for React.
-- **eslint-plugin-react-hooks**: `^4.6.0` - Linter plugin for React Hooks.
-- **eslint-plugin-react-refresh**: `^0.4.4` - Linter plugin for React Fast Refresh.
-- **postcss**: `^8.4.39` - Tool for transforming CSS with JavaScript plugins.
-- **tailwindcss**: `^3.4.4` - Utility-first CSS framework.
-- **vite**: `^5.0.0` - Next-generation front-end tool for development.
+- **auth**: `^1.1.1` - Includes features for managing user login, registration, and session management.
+- **cors**: `^2.8.5` - Essential for handling cross-origin requests and ensuring secure interactions between web applications and servers
+- **dotenv**: `^16.4.5` - Useful for managing configuration settings and secrets in the application without hardcoding.
+- **express**: `^4.19.2` - Simplifies the creation of server-side logic and routing.
+- **firebase**: `^10.12.3` - Provides tools and infrastructure to develop high-quality apps, including features like real-time databases, authentication, analytics, and cloud messaging.
+- **firebase-admin**: `^12.0.0` - Provides administrative capabilities such as managing users, sending notifications, and accessing Firebase services from the server.
 - **pg-promise**: `^11.6.0` - PostgreSQL promise-based library for Node.js.
 
 ## Project Setup

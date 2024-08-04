@@ -140,7 +140,7 @@ const evaluateBadgeCriteria = async (badgeId, teamId) => {
   }
 };
 
-// Add badge to a team
+// Add badge to a team if criteria is fulfilled
 const checkAndAddBadgeToTeam = async (teamId, badgeId) => {
   const isEligible = await evaluateBadgeCriteria(badgeId, teamId);
   if (isEligible) {

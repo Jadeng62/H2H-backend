@@ -140,6 +140,9 @@ const evaluateBadgeCriteria = async (badgeId, teamId) => {
   }
 };
 
+// ONLY ADDED checkAndAddBadgeToTeam to the controllers for first 2 badges!!! (team create & full roster)
+// The rest of the badges needed to be checked for in proper controllers w/ proper IDs at moment only first 2 badges can be unlocked
+
 // Add badge to a team if criteria is fulfilled
 const checkAndAddBadgeToTeam = async (teamId, badgeId) => {
   const isEligible = await evaluateBadgeCriteria(badgeId, teamId);

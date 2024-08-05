@@ -105,11 +105,11 @@ INSERT INTO badges (name, description, icon_url, criteria) VALUES
 -- Add badges for Team 1
 INSERT INTO team_badges (team_id, badge_id, earned_at)
 VALUES
-    (1, 1, '2024-01-01 10:00:00'), -- Champion Badge
-    (1, 2, '2024-01-01 10:00:00'); -- Underdog Badge
+    (1, 1, '2024-01-01 10:00:00'), -- Create team badge 
+    (1, 2, '2024-01-01 10:00:00'); -- Full Roster Badge
 
 -- Add badges for Team 2
 INSERT INTO team_badges (team_id, badge_id, earned_at)
 VALUES
-    (2, 3, '2024-01-02 11:00:00'), -- Team Player Badge
-    (2, 4, '2024-01-02 11:00:00'); -- Defensive Wall Badge
+    (2, 1, '2024-01-02 11:00:00'), -- Team Player Badge
+    (2, 2, '2024-01-02 11:00:00'); -- Full Roster Badge Badge

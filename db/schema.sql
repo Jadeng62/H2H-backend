@@ -43,7 +43,8 @@ CREATE TABLE badges (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     description TEXT,
-    icon_url TEXT
+    icon_url TEXT,
+    criteria JSON
 );
 
 CREATE TABLE team_badges (

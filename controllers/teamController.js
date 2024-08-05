@@ -8,10 +8,13 @@ const {
   updateTeam,
 } = require("../queries/team");
 const { getUsersByTeamID } = require("../queries/users");
+const { checkAndAddBadgeToTeam } = require("../services/badgeService.js");
 
 team.post("/", async (req, res) => {
   try {
     const newTeam = await createTeam(req.body);
+    const teamId = newTeam.id; // created a binding to abbreviate teamID
+    await checkAndAddBadgeToTeam(teamId, 1); // check if team unlocked a badge
     res.status(200).json(newTeam);
   } catch (error) {
     console.error("Error creating teams:", error);
@@ -35,6 +38,8 @@ team.put("/:id", async (req, res) => {
   try {
     const updatedTeam = await updateTeam(req.body, id);
     if (updatedTeam) {
+      const teamId = id;
+      await checkAndAddBadgeToTeam(teamId, 2); // check if team unlocked badge
       res.status(200).json(updatedTeam);
     } else {
       res

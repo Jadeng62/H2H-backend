@@ -2,6 +2,18 @@ const db = require("../db/dbConfig");
 
 const addBadgeToTeam = async (team_id, badge_id) => {
   try {
+    // check if badge for a specific team already exists
+    const checkQuery = `
+      SELECT * 
+      FROM team_badges 
+      WHERE team_id = $1 AND badge_id = $2
+    `;
+    const existingBadge = await db.oneOrNone(checkQuery, [team_id, badge_id]);
+
+    if (existingBadge) {
+      throw new Error("Badge already awarded to this team");
+    }
+
     const query =
       "INSERT INTO team_badges (team_id, badge_id) VALUES ($1, $2) RETURNING *";
     const newBadge = await db.one(query, [team_id, badge_id]);
